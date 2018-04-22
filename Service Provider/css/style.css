@@ -1,9 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Alex+Brush');
 
 *{
 	margin:0;
 	padding:0;
 }
+
+/* For the logo and navigation container at the home page */
 
 .main-wrapper{
 	height:200px;
@@ -37,6 +39,11 @@
 	color:#909497;
 	font-size:18px;
 	font-family: 'Montserrat', sans-serif;
+	cursor:pointer;
+}
+
+.navdiv a:hover{
+	color:black;
 }
 
 .navdiv button{
@@ -45,7 +52,10 @@
 	border:none;
 	background-color:white;
 	font-family: 'Montserrat', sans-serif;
+	cursor:pointer;
 }
+
+/*For the image slider*/
 
 .load{
 	animation:slide 2s;
@@ -58,6 +68,7 @@
 	width:100%;
 	height:100%;
 	animation:slide 30s infinite;
+	background-attachment: fixed;
 }
 
 .slider1{
@@ -84,25 +95,53 @@
 	text-align:center;
 	letter-spacing:5px;
 }
+/*The text inside the image slider (index)*/
+
 
 .principal p{
-	font-size:20px;
-	margin-bottom:20px;
+	color: white;
+	font-weight:bold;
+	font-family: "Courier";
+	font-size: 45px;
+	margin: 10px 0 30px 10px;
+	white-space: nowrap;
+    overflow:hidden;
+    border-right: .1em solid white;
+    -webkit-animation: typing 5s steps(40, end), /* # of steps = # of characters */
+                        blink-caret 1s step-end infinite;
+    -moz-animation: typing 5s steps(40, end), /* # of steps = # of characters */
+                        blink-caret 1s step-end infinite;
 }
 
+@-webkit-keyframes typing {
+    from { width: 0 }
+    to { width:25em }
+}
+
+@-moz-keyframes typing {
+    from { width: 0 }
+    to { width:25em }
+}
+
+@-webkit-keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: white }
+}
+
+@-moz-keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: white }
+}
 .principal a{
 	text-decoration:none;
-	color:white;
+	color:black;
 	border:2px white solid;
 	padding:10px;
-}
-*{
-	margin:0;
-	padding:0;
+	background-color:white;
 }
 
 .principal a:hover{
-	color:#D4AC0D;
+	color:#A18276;
 }
 
 @keyframes slide{
@@ -137,6 +176,8 @@
 		background-image:url('image6.jpg');
 	}
 }
+
+/*For the login container*/
 
 .container{
 	width:530px;
@@ -191,4 +232,156 @@
 	background-color:black;
 	color:#A18276;
 	cursor:pointer;
+}
+
+/*For the index*/
+
+.main-index{
+	padding:10px;
+}
+
+.main-index1{
+	width:100%;
+}
+
+.main-index1-1{
+	float:left;
+	width:50%;
+	background-color:#D0E3CC;
+	height:50%;
+}
+
+.main-index1-2{
+	float:right;
+	width:50%;
+	height:50%;
+}
+
+.main-index1-2 p{
+	font-size:70px;
+	text-align:center;
+	padding:15%;
+	font-family: 'Alex Brush', cursive;
+}
+
+.main-index1-2 p strong{
+	color:#D0E3CC;
+}
+
+.main-index2{
+	width:100%;
+	padding-top:10px;
+}
+
+.main-index2-1{
+	float:left;
+	width:50%;
+	height:50%;
+}
+
+.main-index2-2{
+	float:right;
+	width:50%;
+	height:50%;
+	background-color:#DAC6B5;
+}
+
+.main-index2-1 p{
+	font-size:70px;
+	text-align:center;
+	padding:15%;
+	font-family: 'Alex Brush', cursive;
+}
+
+.main-index2-1 p strong{
+	color:#D0E3CC;
+}
+
+.main-index3{
+	width:100%;
+	padding-top:10px;
+}
+
+.main-index3-1{
+	float:left;
+	width:50%;
+	height:50%;
+	background-color:#D0E3CC;
+}
+
+.main-index3-2{
+	float:right;
+	width:50%;
+	height:50%;
+}
+
+.main-index3-2 p{
+	font-size:70px;
+	text-align:center;
+	padding:15%;
+	font-family: 'Alex Brush', cursive;
+}
+
+.main-index4{
+	width:100%;
+	padding-top:10px;
+	display:inline-block;
+}
+
+.main-index4-1{
+	width:33.1%;
+	height:30%;
+	background-color:#DAC6B5;
+	display:inline-block;
+}
+
+.main-index4-2{
+	width:33.1%;
+	height:30%;
+	background-color:#D0E3CC;
+	display:inline-block;
+}
+
+.main-index4-3{
+	width:33.1%;
+	height:30%;
+	background-color:#DAC6B5;
+	display:inline-block;
+}
+
+.main-index4-1, .main-index4-2, .main-index4-3, p{
+	font-size:30px;
+	text-align:center;
+	font-family: 'Alex Brush', cursive;
+}
+
+.main-index5{
+	background-image:url('image5.jpg');
+	background-position:center;
+	background-repeat:no-repeat;
+	background-attachment:fixed;
+	background-size:cover;
+	height:80%;
+}
+
+.main-index5-container{
+	background-color:white;
+	position:absolute;
+	text-align:center;
+	letter-spacing:5px;
+	margin-top:15%;
+	width:50%;
+	left:25%;
+}
+
+.main-index5-container p{
+	font-size:100%;
+}
+
+footer{
+	height:20%;
+}
+
+footer p{
+	font-family: "Courier";
 }
