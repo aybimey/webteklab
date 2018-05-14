@@ -85,10 +85,36 @@
       <div class="section-title text-center">
         <h2>My Shop</h2>
       </div>
-    </div>
+    
       <hr>
-      
-<form method="post">
+      <div class="container">
+      <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#myModal">
+          Edit
+      </button>
+    </div>
+    </div>
+    </div>
+    
+<!-- The Modal -->
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Edit Shop</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        Modal body..
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
         <%
    try
    {
@@ -109,39 +135,13 @@
     <bold>Shop Address:</bold> <%=rs.getString("address") %><br>
     <bold>Shop Contact:</bold> <%=rs.getString("shop_contact") %><br>
     
-    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#myModal">
-  Edit
-</button>
-</div>
-
-<!-- The Modal -->
-<div class="modal" id="myModal">
-  <div class="modal-dialog">
-    <div class="modal-content">
-
-      <!-- Modal Header -->
-      <div class="modal-header">
-        <h4 class="modal-title">Edit Shop</h4>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
-      <div class="modal-body">
-        Modal body..
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-      </div>
-
     </div>
-  </div>
-</div>
     
      <hr>
           <%
        }
    %>
    </div>
-</form>
-   
    <%
         rs.close();
         stmt.close();

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 14, 2018 at 06:20 AM
+-- Generation Time: May 14, 2018 at 04:06 PM
 -- Server version: 5.7.19
 -- PHP Version: 7.1.9
 
@@ -84,6 +84,7 @@ CREATE TABLE IF NOT EXISTS `client` (
   `client_id` int(100) NOT NULL AUTO_INCREMENT,
   `username` text NOT NULL,
   `password` text NOT NULL,
+  `client_name` varchar(40) NOT NULL,
   PRIMARY KEY (`client_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -123,8 +124,34 @@ CREATE TABLE IF NOT EXISTS `serviceprovider` (
 --
 
 INSERT INTO `serviceprovider` (`shop_id`, `shop_name`, `password`, `address`, `shop_info`, `shop_contact`) VALUES
-(1, 'fabshop', 'fabshop', '', '', ''),
+(1, 'fabshop', 'fabshop', '#47 gibraltar Road Near Hotel Elizabeth Baguio City', 'We sell your products all like gowns and mens apparel.', 'Call or Text Sherryl ann at 09812344123'),
 (2, '', '', '', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `shop_collection`
+--
+
+DROP TABLE IF EXISTS `shop_collection`;
+CREATE TABLE IF NOT EXISTS `shop_collection` (
+  `cloth_id` int(50) NOT NULL,
+  `cloth_img` varchar(255) NOT NULL,
+  `cloth_name` varchar(255) NOT NULL,
+  `cloth_category` varchar(20) NOT NULL,
+  `cloth_info` varchar(255) NOT NULL,
+  `cloth_quantity` int(50) NOT NULL,
+  `cloth_price` int(50) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `shop_collection`
+--
+
+INSERT INTO `shop_collection` (`cloth_id`, `cloth_img`, `cloth_name`, `cloth_category`, `cloth_info`, `cloth_quantity`, `cloth_price`) VALUES
+(1, '', 'Orange Dress', 'Dress', 'This is a dress', 100, 1000),
+(1, '', 'Black Suit', 'Mens apparel', 'tis is for men', 100, 1000),
+(3, '', 'awdawd', 'wadawd', 'awdawd', 112, 123);
 
 -- --------------------------------------------------------
 
