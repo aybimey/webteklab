@@ -2,10 +2,10 @@
 -- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3308
--- Generation Time: May 10, 2018 at 11:12 AM
+-- Host: 127.0.0.1:3306
+-- Generation Time: May 14, 2018 at 06:20 AM
 -- Server version: 5.7.19
--- PHP Version: 5.6.31
+-- PHP Version: 7.1.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,6 +21,21 @@ SET time_zone = "+00:00";
 --
 -- Database: `rental`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `accepted_reservation`
+--
+
+DROP TABLE IF EXISTS `accepted_reservation`;
+CREATE TABLE IF NOT EXISTS `accepted_reservation` (
+  `reservation_id` int(50) NOT NULL AUTO_INCREMENT,
+  `reservation_quantity` int(50) NOT NULL,
+  `reservation_date` date NOT NULL,
+  `reservation_duedate` date NOT NULL,
+  PRIMARY KEY (`reservation_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -75,6 +90,20 @@ CREATE TABLE IF NOT EXISTS `client` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `request_reservation`
+--
+
+DROP TABLE IF EXISTS `request_reservation`;
+CREATE TABLE IF NOT EXISTS `request_reservation` (
+  `req_id` int(11) NOT NULL AUTO_INCREMENT,
+  `reservation_quantity` int(3) NOT NULL,
+  `reservation_date` date NOT NULL,
+  PRIMARY KEY (`req_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `serviceprovider`
 --
 
@@ -84,6 +113,8 @@ CREATE TABLE IF NOT EXISTS `serviceprovider` (
   `shop_name` varchar(20) NOT NULL,
   `password` varchar(20) NOT NULL,
   `address` varchar(200) NOT NULL,
+  `shop_info` varchar(255) NOT NULL,
+  `shop_contact` varchar(50) NOT NULL,
   PRIMARY KEY (`shop_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
@@ -91,9 +122,21 @@ CREATE TABLE IF NOT EXISTS `serviceprovider` (
 -- Dumping data for table `serviceprovider`
 --
 
-INSERT INTO `serviceprovider` (`shop_id`, `shop_name`, `password`, `address`) VALUES
-(1, 'fabshop', 'fabshop', ''),
-(2, '', '', '');
+INSERT INTO `serviceprovider` (`shop_id`, `shop_name`, `password`, `address`, `shop_info`, `shop_contact`) VALUES
+(1, 'fabshop', 'fabshop', '', '', ''),
+(2, '', '', '', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `transaction`
+--
+
+DROP TABLE IF EXISTS `transaction`;
+CREATE TABLE IF NOT EXISTS `transaction` (
+  `transaction_id` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`transaction_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
