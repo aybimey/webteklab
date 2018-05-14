@@ -21,6 +21,7 @@
   <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
   <link href="lib/magnific-popup/magnific-popup.css" rel="stylesheet">
   <link href="lib/hover/hover.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
   <!-- Blog Stylesheet File -->
   <link href="css/blog.css" rel="stylesheet">
@@ -56,10 +57,11 @@
         <div class="responsive"><i data-icon="m" class="ion-navicon-round"></i></div>
 		
         <ul class="nav-menu list-unstyled" style="margin-top:0%;">
-          <li><a href="home.html" class="smoothScroll">Home</a></li>
-          <li><a href="collections.html" class="smoothScroll" style="color:#b8a07e;">Collections</a></li>
-          <li><a href="planner.html" class="smoothScroll">Planner</a></li>
-          <li><a href="messages.html" class="smoothScroll">Messages</a></li>
+          <li><a href="home.jsp" class="smoothScroll">Home</a></li>
+          <li><a href="collections.jsp" class="smoothScroll" style="color:#b8a07e;">Collections</a></li>
+          <li><a href="planner.jsp" class="smoothScroll">Planner</a></li>
+          <li><a href="reservation.jsp" class="smoothScroll">Reservation</a></li>
+          <li><a href="transaction.jsp" class="smoothScroll">Transaction</a></li>
           <li><a href="#" class="smoothScroll">Logout</a></li>
         </ul>
 
@@ -73,7 +75,7 @@
 
     <div class="container">
       <div class="section-title text-center">
-        <h2>Name of your shop</h2>
+        <h2>My Collections</h2>
       </div>
     </div>
 
@@ -81,108 +83,7 @@
 	
 	
 	
-      <div class="journal-block">
-        <div class="row">
-
-          <div class="col-lg-4 col-md-6">
-            <div class="journal-info mb-30">
-
-              <a href="blog-single.html"><img src="images/blog-post-1.jpg" class="img-responsive" alt="img"></a>
-
-              <div class="journal-txt">
-
-                <h4><a href="blog-single.html">SO LETS MAKE THE MOST IS BEAUTIFUL</a></h4>
-                <p class="separator">To an English person, it will seem like simplified English
-                </p>
-
-              </div>
-
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="journal-info mb-30">
-
-              <a href="blog-single.html"><img src="images/blog-post-2.jpg" class="img-responsive" alt="img"></a>
-
-              <div class="journal-txt">
-
-                <h4><a href="blog-single.html">WE'RE GONA MAKE DREAMS COMES</a></h4>
-                <p class="separator">To an English person, it will seem like simplified English
-                </p>
-
-              </div>
-
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="journal-info mb-30">
-
-              <a href="blog-single.html"><img src="images/blog-post-3.jpg" class="img-responsive" alt="img"></a>
-
-              <div class="journal-txt">
-
-                <h4><a href="blog-single.html">NEW LIFE CIVILIZATIONS TO BOLDLY</a></h4>
-                <p class="separator">To an English person, it will seem like simplified English
-                </p>
-
-              </div>
-
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="journal-info mb-30">
-
-              <a href="blog-single.html"><img src="images/blog-post-1.jpg" class="img-responsive" alt="img"></a>
-
-              <div class="journal-txt">
-
-                <h4><a href="blog-single.html">SO LETS MAKE THE MOST IS BEAUTIFUL</a></h4>
-                <p class="separator">To an English person, it will seem like simplified English
-                </p>
-
-              </div>
-
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="journal-info mb-30">
-
-              <a href="blog-single.html"><img src="images/blog-post-2.jpg" class="img-responsive" alt="img"></a>
-
-              <div class="journal-txt">
-
-                <h4><a href="blog-single.html">WE'RE GONA MAKE DREAMS COMES</a></h4>
-                <p class="separator">To an English person, it will seem like simplified English
-                </p>
-
-              </div>
-
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="journal-info mb-30">
-
-              <a href="blog-single.html"><img src="images/blog-post-3.jpg" class="img-responsive" alt="img"></a>
-
-              <div class="journal-txt">
-
-                <h4><a href="blog-single.html">NEW LIFE CIVILIZATIONS TO BOLDLY</a></h4>
-                <p class="separator">To an English person, it will seem like simplified English
-                </p>
-
-              </div>
-
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
+      
   </div>
   <!-- End section journal -->
 

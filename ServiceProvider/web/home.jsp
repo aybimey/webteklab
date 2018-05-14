@@ -68,7 +68,8 @@
           <li><a href="home.jsp" class="smoothScroll" style="color:#b8a07e;">Home</a></li>
           <li><a href="collections.jsp" class="smoothScroll">Collections</a></li>
           <li><a href="planner.jsp" class="smoothScroll">Planner</a></li>
-          <li><a href="messages.jsp" class="smoothScroll">Messages</a></li>
+          <li><a href="reservation.jsp" class="smoothScroll">Reservation</a></li>
+          <li><a href="transaction.jsp" class="smoothScroll">Transaction</a></li>
           <li><a href="#" class="smoothScroll">Logout</a></li>
         </ul>
 
@@ -82,36 +83,65 @@
 
     <div class="container">
       <div class="section-title text-center">
-        <h2>awdawd</h2>
+        <h2>My Shop</h2>
       </div>
     </div>
-
-                 <%
+      <hr>
+      
+<form method="post">
+        <%
    try
    {
        Class.forName("com.mysql.jdbc.Driver");
-       String url="jdbc:mysql://localhost:3306/practicumproj";
+       String url="jdbc:mysql://localhost:3306/rental";
        String username="root";
        String password="";
-       String query="select * from participant";
+       String query="select * from serviceprovider";
        Connection conn=DriverManager.getConnection(url, username, password);
        Statement stmt=conn.createStatement();
        ResultSet rs=stmt.executeQuery(query);
        while(rs.next())
        {
    %>
-        <tr><td><%=rs.getString("p_name") %></td>
-        <td><%=rs.getString("p_email") %></td>
-        <td><%=rs.getInt("p_number") %></td>
-        <td><a href="insert.jsp">Add Person</a></td>
-        <td><a href="update.jsp?id=<%=rs.getString("p_id")%>">Edit</a></td>
-        <td><a href="delete.jsp?id=<%=rs.getString("p_id")%>">Delete</a></td>
-       
-        </tr>
+   <div class ="jumbotron">
+    <bold>Shop Name:</bold> <%=rs.getString("shop_name") %><br>
+    <bold>Shop Infomation:</bold> <%=rs.getString("shop_info") %><br>
+    <bold>Shop Address:</bold> <%=rs.getString("address") %><br>
+    <bold>Shop Contact:</bold> <%=rs.getString("shop_contact") %><br>
+    
+    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#myModal">
+  Edit
+</button>
+</div>
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Edit Shop</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        Modal body..
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+    
+     <hr>
           <%
        }
    %>
-   </table>
+   </div>
+</form>
+   
    <%
         rs.close();
         stmt.close();
@@ -124,95 +154,7 @@
    %>
         
 
-              </div>
-
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="journal-info mb-30">
-
-              <a href="blog-single.html"><img src="images/blog-post-2.jpg" class="img-responsive" alt="img"></a>
-
-              <div class="journal-txt">
-
-                <h4><a href="blog-single.html">WE'RE GONA MAKE DREAMS COMES</a></h4>
-                <p class="separator">To an English person, it will seem like simplified English
-                </p>
-
-              </div>
-
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="journal-info mb-30">
-
-              <a href="blog-single.html"><img src="images/blog-post-3.jpg" class="img-responsive" alt="img"></a>
-
-              <div class="journal-txt">
-
-                <h4><a href="blog-single.html">NEW LIFE CIVILIZATIONS TO BOLDLY</a></h4>
-                <p class="separator">To an English person, it will seem like simplified English
-                </p>
-
-              </div>
-
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="journal-info mb-30">
-
-              <a href="blog-single.html"><img src="images/blog-post-1.jpg" class="img-responsive" alt="img"></a>
-
-              <div class="journal-txt">
-
-                <h4><a href="blog-single.html">SO LETS MAKE THE MOST IS BEAUTIFUL</a></h4>
-                <p class="separator">To an English person, it will seem like simplified English
-                </p>
-
-              </div>
-
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="journal-info mb-30">
-
-              <a href="blog-single.html"><img src="images/blog-post-2.jpg" class="img-responsive" alt="img"></a>
-
-              <div class="journal-txt">
-
-                <h4><a href="blog-single.html">WE'RE GONA MAKE DREAMS COMES</a></h4>
-                <p class="separator">To an English person, it will seem like simplified English
-                </p>
-
-              </div>
-
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="journal-info mb-30">
-
-              <a href="blog-single.html"><img src="images/blog-post-3.jpg" class="img-responsive" alt="img"></a>
-
-              <div class="journal-txt">
-
-                <h4><a href="blog-single.html">NEW LIFE CIVILIZATIONS TO BOLDLY</a></h4>
-                <p class="separator">To an English person, it will seem like simplified English
-                </p>
-
-              </div>
-
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
+              
   <!-- End section journal -->
 
 
@@ -232,7 +174,7 @@
 
       </div>
 
-      <p>&copy; Copyrights Webtech Finals. All rights reserved.</p>
+      <p>&copy; 2018 Madameoiselle.com. All rights reserved.</p>
 
 
     </div>

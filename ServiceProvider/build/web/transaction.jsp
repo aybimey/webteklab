@@ -75,12 +75,10 @@
 
     <div class="container">
       <div class="section-title text-center">
-        <h2>Client Reservation</h2>
+        <h2>Transaction</h2>
       </div>
     </div>
 
-    
-  </div>
   <!-- End section journal -->
 
 
