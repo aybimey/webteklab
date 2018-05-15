@@ -36,7 +36,8 @@
   
   <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<%@ page import="java.sql.ResultSet" %>
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <%@ page import="java.sql.ResultSet" %>
 <%@ page import="java.sql.Statement" %>
 <%@ page import="java.sql.Connection" %>
 <%@ page import="java.sql.DriverManager" %>
@@ -44,8 +45,26 @@
 <%@ page import="javax.servlet.http.*,javax.servlet.*" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
-</head>
 
+<style>
+    .madam{color:black;
+    font-family:'Great vibes', cursive;
+    margin-top:2.5%;
+    color:#b8a07e;}
+    
+    .madam:hover{
+        color:black;
+    }
+    
+    ul li a:hover{
+        color:#b8a07e;  
+    }
+    
+    .shophome{
+        padding:3%;
+    }
+</style>
+</head>
 <body>
 
   <!-- start section navbar -->
@@ -58,19 +77,18 @@
 				<img src="images/gown.png">
 			</div>
 			<div class="logo-right" style="float:right; width:70%;">
-				<a href="index.html"><h1 style="font-family: 'Great Vibes', cursive; margin-top:2.5%; color:black">Madamoiselle</h1></a>
+				<a href="home.jsp"><h1 class ="madam">Madamoiselle</h1></a>
 			</div>
         </div>
 
         <div class="responsive"><i data-icon="m" class="ion-navicon-round"></i></div>
 		
         <ul class="nav-menu list-unstyled" style="margin-top:0%;">
-          <li><a href="home.jsp" class="smoothScroll" style="color:#b8a07e;">Home</a></li>
-          <li><a href="collections.jsp" class="smoothScroll">Collections</a></li>
-          <li><a href="planner.jsp" class="smoothScroll">Planner</a></li>
-          <li><a href="reservation.jsp" class="smoothScroll">Reservation</a></li>
-          <li><a href="transaction.jsp" class="smoothScroll">Transaction</a></li>
-          <li><a href="#" class="smoothScroll">Logout</a></li>
+          <li><a href="home.jsp" class="smoothScroll" style="color:#b8a07e;"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+          <li><a href="collections.jsp" class="smoothScroll"><i class="fa fa-female" aria-hidden="true"></i>Collections</a></li>
+          <li><a href="planner.jsp" class="smoothScroll"><i class="fa fa-shopping-basket" aria-hidden="true"></i>Planner</a></li>
+          <li><a href="reservation.jsp" class="smoothScroll"><i class="fa fa-address-book" aria-hidden="true"></i>Reservation</a></li>
+          <li><a href="#" class="smoothScroll"><a href="logout.jsp" ><i class="fa fa-caret-square-o-right" aria-hidden="true"></i>Logout</a></li>
         </ul>
 
       </div>
@@ -81,38 +99,45 @@
   <!-- start section journal -->
   <div id="journal-blog" class="text-left  paddsections" style="margin-top:5%;">
 
-    <div class="container">
-      <div class="section-title text-center">
-        <h2>My Shop</h2>
-      </div>
-    </div>
-      <hr>
+    
+      
       
 <form method="post">
-        <%
+   <%
+      
    try
    {
        Class.forName("com.mysql.jdbc.Driver");
        String url="jdbc:mysql://localhost:3308/rental";
        String username="root";
-       String password="";
-       String query="select * from serviceprovider";
+       String password="root";
+       String query="select * from serviceprovider where shop_name='"+session.getAttribute( "shop_name" )+"'";
        Connection conn=DriverManager.getConnection(url, username, password);
        Statement stmt=conn.createStatement();
        ResultSet rs=stmt.executeQuery(query);
        while(rs.next())
        {
    %>
-   <div class ="jumbotron">
-    <bold>Shop Name:</bold> <%=rs.getString("shop_name") %><br>
-    <bold>Shop Infomation:</bold> <%=rs.getString("shop_info") %><br>
-    <bold>Shop Address:</bold> <%=rs.getString("address") %><br>
-    <bold>Shop Contact:</bold> <%=rs.getString("shop_contact") %><br>
+   
+   <div class="container">
+      <div class="section-title text-center">
+          
+        <h2><%= session.getAttribute( "shop_name" ) %></h2>
+        <p>By <%=rs.getString("shop_owner") %>.</p>
+      </div>
+    </div>
+    
+      <hr>
+   
+   <div class ="shophome">
+    <bold>My Shop Information:</bold> <%=rs.getString("shop_info") %><br>
+    <bold>My Shop Address:</bold> <%=rs.getString("address") %><br>
+    <bold>My Shop Contact:</bold> <%=rs.getString("shop_contact") %><br>
     
     <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#myModal">
-  Edit
-</button>
-</div>
+    Edit
+    </button>
+    </div>
 
 <!-- The Modal -->
 <div class="modal" id="myModal">
@@ -138,9 +163,9 @@
      <hr>
           <%
        }
-   %>
-   </div>
-</form>
+   %></form>
+  </div>
+
    
    <%
         rs.close();

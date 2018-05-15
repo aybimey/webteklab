@@ -214,6 +214,14 @@
             </div>
           </div>
           <div class="col-lg-6">
+             <% String shop_name = (String)session.getAttribute("shop_name");
+                
+             if(shop_name!=null){
+                 String site = new String("http://localhost:8084/ServiceProvider/home.jsp");
+                    response.setStatus(response.SC_MOVED_TEMPORARILY);
+                    response.setHeader("Location",site);
+            } else { %> 
+            
             <form action="login.jsp" method="post">
               <div class="row">
 
@@ -232,7 +240,7 @@
                   <input type="submit" class="btn btn-defeault btn-send" value="Log in">
                 </div>
               </div>
-            </form><br>
+            </form><% } %><br>
             <center><h4 class="mb-30"><a href="register.jsp">Doesn't have an account? Create an account now</a></h4></center>
             </div>
         </div>

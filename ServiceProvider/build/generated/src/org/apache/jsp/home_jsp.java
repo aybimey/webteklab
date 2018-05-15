@@ -88,7 +88,6 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("  \r\n");
       out.write("  <link href=\"https://fonts.googleapis.com/css?family=Great+Vibes\" rel=\"stylesheet\">\r\n");
       out.write("  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css\" integrity=\"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm\" crossorigin=\"anonymous\">\r\n");
-      out.write("   <link rel=\"stylesheet\" type=\"text/css\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n");
       out.write("\r\n");
       out.write("\r\n");
       out.write("\r\n");
@@ -111,7 +110,7 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t<img src=\"images/gown.png\">\r\n");
       out.write("\t\t\t</div>\r\n");
       out.write("\t\t\t<div class=\"logo-right\" style=\"float:right; width:70%;\">\r\n");
-      out.write("\t\t\t\t<a href=\"home.jsp\"><h1 style=\"font-family: 'Great Vibes', cursive; margin-top:2.5%;\">Madamoiselle</h1></a>\r\n");
+      out.write("\t\t\t\t<a href=\"index.html\"><h1 style=\"font-family: 'Great Vibes', cursive; margin-top:2.5%;\">Madamoiselle</h1></a>\r\n");
       out.write("\t\t\t</div>\r\n");
       out.write("        </div>\r\n");
       out.write("\r\n");
@@ -119,11 +118,11 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\r\n");
       out.write("        <ul class=\"nav-menu list-unstyled\" style=\"margin-top:0%;\">\r\n");
       out.write("          <li><a href=\"home.jsp\" class=\"smoothScroll\" style=\"color:#b8a07e;\">Home</a></li>\r\n");
-      out.write("          <li><a href=\"collections.jsp\" class=\"smoothScroll\"></i>Collections</a></li>\r\n");
+      out.write("          <li><a href=\"collections.jsp\" class=\"smoothScroll\">Collections</a></li>\r\n");
       out.write("          <li><a href=\"planner.jsp\" class=\"smoothScroll\">Planner</a></li>\r\n");
       out.write("          <li><a href=\"reservation.jsp\" class=\"smoothScroll\">Reservation</a></li>\r\n");
       out.write("          <li><a href=\"transaction.jsp\" class=\"smoothScroll\">Transaction</a></li>\r\n");
-      out.write("          <li><a href=\"#\" class=\"smoothScroll\"><i class=\"fa fa-caret-square-o-right\" aria-hidden=\"true\"></i> Logout</a></li>\r\n");
+      out.write("          <li><a href=\"#\" class=\"smoothScroll\">Logout</a></li>\r\n");
       out.write("        </ul>\r\n");
       out.write("\r\n");
       out.write("      </div>\r\n");
@@ -138,8 +137,11 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("      <div class=\"section-title text-center\">\r\n");
       out.write("        <h2>My Shop</h2>\r\n");
       out.write("      </div>\r\n");
+      out.write("    </div>\r\n");
       out.write("      <hr>\r\n");
-      out.write("  ");
+      out.write("      \r\n");
+      out.write("<form method=\"post\">\r\n");
+      out.write("        ");
 
    try
    {
@@ -159,7 +161,7 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <bold>Shop Name:</bold> ");
       out.print(rs.getString("shop_name") );
       out.write("<br>\r\n");
-      out.write("    <bold>Shop Information:</bold> ");
+      out.write("    <bold>Shop Infomation:</bold> ");
       out.print(rs.getString("shop_info") );
       out.write("<br>\r\n");
       out.write("    <bold>Shop Address:</bold> ");
@@ -168,16 +170,14 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <bold>Shop Contact:</bold> ");
       out.print(rs.getString("shop_contact") );
       out.write("<br>\r\n");
-      out.write("    </div>\r\n");
-      out.write("\r\n");
-      out.write("    </div>\r\n");
-      out.write("   <div class=\"container\">\r\n");
-      out.write("      <button type=\"button\" class=\"btn btn-secondary\" data-toggle=\"modal\" data-target=\"#myModal\"><i class=\"fa fa-pencil-square-o\" aria-hidden=\"true\"></i> Edit\r\n");
-      out.write("      </button>\r\n");
-      out.write("    </div>\r\n");
       out.write("    \r\n");
+      out.write("    <button type=\"button\" class=\"btn btn-secondary\" data-toggle=\"modal\" data-target=\"#myModal\">\r\n");
+      out.write("  Edit\r\n");
+      out.write("</button>\r\n");
+      out.write("</div>\r\n");
+      out.write("\r\n");
       out.write("<!-- The Modal -->\r\n");
-      out.write("<div class=\"modal fade\" id=\"myModal\">\r\n");
+      out.write("<div class=\"modal\" id=\"myModal\">\r\n");
       out.write("  <div class=\"modal-dialog\">\r\n");
       out.write("    <div class=\"modal-content\">\r\n");
       out.write("\r\n");
@@ -187,50 +187,24 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>\r\n");
       out.write("      </div>\r\n");
       out.write("      <div class=\"modal-body\">\r\n");
-      out.write("        <form class=\"form-group\" method=\"post\" action=\"editshop.jsp\">\r\n");
-      out.write("        <input class=\"form-control\" type=\"hidden\" name=\"shopid\" value=\"");
-      out.print(rs.getString("shop_id") );
-      out.write("\">\r\n");
-      out.write("        <br>\r\n");
-      out.write("        Shop Name:<br>\r\n");
-      out.write("        <input class=\"form-control\" type=\"text\" name=\"shopname\" value=\"");
-      out.print(rs.getString("shop_name") );
-      out.write("\">\r\n");
-      out.write("        <br>\r\n");
-      out.write("        Shop Information:<br>\r\n");
-      out.write("        <input class=\"form-control\" type=\"text\" name=\"shopaddress\" value=\"");
-      out.print(rs.getString("address") );
-      out.write("\">\r\n");
-      out.write("        <br>\r\n");
-      out.write("        Shop Address:<br>\r\n");
-      out.write("        <input class=\"form-control\" type=\"text\" name=\"shopinfo\" value=\"");
-      out.print(rs.getString("shop_info") );
-      out.write("\">\r\n");
-      out.write("        <br>\r\n");
-      out.write("        Shop Contact:<br>\r\n");
-      out.write("        <input class=\"form-control\" type=\"text\" name=\"shopcontact\" value=\"");
-      out.print(rs.getString("shop_contact") );
-      out.write("\">\r\n");
-      out.write("        <br>\r\n");
-      out.write("        <div class=\"modal-footer\">\r\n");
-      out.write("        <button class=\"btn btn-secondary\" type=\"submit\"><i class=\"fa fa-check\" aria-hidden=\"true\"></i> Submit</button>\r\n");
-      out.write("        <button type=\"button\" class=\"btn btn-danger\" data-dismiss=\"modal\"><i class=\"fa fa-window-close\" aria-hidden=\"true\"></i> Close</button>\r\n");
-      out.write("        </div>\r\n");
-      out.write("        </form>\r\n");
-      out.write("\r\n");
+      out.write("        Modal body..\r\n");
+      out.write("      </div>\r\n");
+      out.write("      <div class=\"modal-footer\">\r\n");
+      out.write("        <button type=\"button\" class=\"btn btn-danger\" data-dismiss=\"modal\">Close</button>\r\n");
       out.write("      </div>\r\n");
       out.write("\r\n");
       out.write("    </div>\r\n");
       out.write("  </div>\r\n");
       out.write("</div>\r\n");
-      out.write("   \r\n");
-      out.write("  \r\n");
+      out.write("    \r\n");
+      out.write("     <hr>\r\n");
       out.write("          ");
 
        }
    
       out.write("\r\n");
-      out.write("   \r\n");
+      out.write("   </div>\r\n");
+      out.write("</form>\r\n");
       out.write("   \r\n");
       out.write("   ");
 
@@ -244,17 +218,13 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
    }
    
       out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
       out.write("        \r\n");
       out.write("\r\n");
+      out.write("              \r\n");
+      out.write("  <!-- End section journal -->\r\n");
       out.write("\r\n");
       out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
+      out.write("  <!-- start section footer -->\r\n");
       out.write("  <div id=\"footer\" class=\"text-center\">\r\n");
       out.write("    <div class=\"container\">\r\n");
       out.write("      <div class=\"socials-media text-center\">\r\n");

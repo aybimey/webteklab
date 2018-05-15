@@ -16,6 +16,9 @@ Class.forName("com.mysql.jdbc.Driver");
 Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3308/rental", "root", "root");
 Statement st=conn.createStatement();
 int i=st.executeUpdate("insert into serviceprovider(shop_owner,shop_name,password,address,shop_contact,shop_info)value('"+shop_owner+"','"+shop_name+"','"+password+"','"+address+"','"+shop_contact+"','"+shop_info+"')");
+String site = new String("http://localhost:8084/ServiceProvider/index.jsp");
+    response.setStatus(response.SC_MOVED_TEMPORARILY);
+    response.setHeader("Location",site);
 out.println("Thank you for register ! Please <a href='index.jsp'>Login</a> to continue.");
 }
 catch(Exception e)

@@ -1,4 +1,4 @@
-e<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -203,68 +203,51 @@ e<!DOCTYPE html>
   <!-- End section journal -->
 
 
-  <!-- start sectoion contact -->
+  <!-- start section of login -->
   <div id="contact" class="paddsection">
     <div class="container">
       <div class="contact-block1">
         <div class="row">
-
           <div class="col-lg-6">
             <div class="contact-contact">
-
-              <h2 class="mb-30">Sign In Now!</h2>
-
+              <h2 class="mb-30"></h2>
             </div>
           </div>
-
           <div class="col-lg-6">
-            <form action="" method="post" role="form" class="contactForm">
+             <% String shop_name = (String)session.getAttribute("shop_name");
+                
+             if(shop_name!=null){
+                 String site = new String("http://localhost:8084/ServiceProvider/home.jsp");
+                    response.setStatus(response.SC_MOVED_TEMPORARILY);
+                    response.setHeader("Location",site);
+            } else { %> 
+            
+            <form action="login.jsp" method="post">
               <div class="row">
 
                 <div id="sendmessage">Your message has been sent. Thank you!</div>
                 <div id="errormessage"></div>
 
                 <div class="col-lg-6">
-                  <div class="form-group contact-block1">
-                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                    <div class="validation"></div>
-                  </div>
+                    <input type="text" name="shop_name" class="form-control" id="name" placeholder="Your username" />
                 </div>
 
-                <div class="col-lg-6">
-                  <div class="form-group">
-                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
-                    <div class="validation"></div>
-                  </div>
+                <div class="col-lg-6"> 
+                      <input type="password" class="form-control" name="password" id="password" placeholder="Your password" />
                 </div>
 
                 <div class="col-lg-12">
-                  <div class="form-group">
-                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                    <div class="validation"></div>
-                  </div>
+                  <input type="submit" class="btn btn-defeault btn-send" value="Log in">
                 </div>
-
-                <div class="col-lg-12">
-                  <div class="form-group">
-                    <textarea class="form-control" name="message" rows="12" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
-                    <div class="validation"></div>
-                  </div>
-                </div>
-
-                <div class="col-lg-12">
-                  <input type="submit" class="btn btn-defeault btn-send" value="Sign in">
-                </div>
-
               </div>
-            </form><br>
-			<h4 class="mb-30">Doesn't have an account? Create an account now</h4>
-          </div>
+            </form><% } %><br>
+            <center><h4 class="mb-30"><a href="register.jsp">Doesn't have an account? Create an account now</a></h4></center>
+            </div>
         </div>
       </div>
     </div>
   </div>
-  <!-- start sectoion contact -->
+  <!-- end section of login -->
 
 
   <!-- start section footer -->
