@@ -67,11 +67,10 @@
         <div class="responsive"><i data-icon="m" class="ion-navicon-round"></i></div>
     
         <ul class="nav-menu list-unstyled" style="margin-top:0%;">
-          <li><a href="home.jsp" class="smoothScroll" ><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
-          <li><a href="collections.jsp" class="smoothScroll" style="color:#b8a07e;">Collections</a></li>
-          <li><a href="planner.jsp" class="smoothScroll">Planner</a></li>
-          <li><a href="reservation.jsp" class="smoothScroll">Reservation</a></li>
-          <li><a href="transaction.jsp" class="smoothScroll">Transaction</a></li>
+          <li><a href="home.jsp" class="smoothScroll" style="color:#b8a07e;"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+          <li><a href="collections.jsp" class="smoothScroll"><i class="fa fa-female" aria-hidden="true"></i> Collections</a></li>
+          <li><a href="planner.jsp" class="smoothScroll"><i class="fa fa-shopping-basket" aria-hidden="true"></i> Planner</a></li>
+          <li><a href="reservation.jsp" class="smoothScroll"><i class="fa fa-th-list" aria-hidden="true"></i> Reservation</a></li>
           <li><a href="#" class="smoothScroll"><i class="fa fa-caret-square-o-right" aria-hidden="true"></i> Logout</a></li>
         </ul>
 
@@ -112,11 +111,11 @@
           <input type="text" class="form-control" id="exampleFormControlInput1" aria-label="Small" aria-describedby="inputGroup-sizing-sm"> <br>
           Apparel Category: <select class="custom-select" id="inputGroupSelect01" name="apparelcategory">
           <option selected>Choose...</option>
-                            <option value="1">Wedding Gown</option>
-                            <option value="2">Wedding Suit</option>
-                            <option value="3">Prom Dress</option> 
-                            <option value="4">Prom Suit</option>
-                            <option value="5">Retro</option>
+                            <option value="Wedding Gown">Wedding Gown</option>
+                            <option value="Wedding Suit">Wedding Suit</option>
+                            <option value="Prom Dress">Prom Dress</option> 
+                            <option value="Prom Suit">Prom Suit</option>
+                            <option value="Retro">Retro</option>
           </select> <br><br>
                             
           <label for="exampleFormControlInput1">Apparel Info:</label> 
@@ -190,10 +189,10 @@
         <input class="form-control" type="text" name="info" value="<%=rs.getString("cloth_info") %>">
         <br>
         Quantity:<br>
-        <input class="form-control" type="text" name="quantity" value="<%=rs.getString("cloth_quantity") %>">
+        <input class="form-control" type="number" name="quantity" value="<%=rs.getString("cloth_quantity") %>">
         <br>
         Price:<br>
-        <input class="form-control" type="text" name="price" value="<%=rs.getString("cloth_price") %>">
+        <input class="form-control" type="number" name="price" value="<%=rs.getString("cloth_price") %>">
         <br>
         <div class="modal-footer">
         <button class="btn btn-secondary" type="submit"><i class="fa fa-check" aria-hidden="true"></i> Submit</button>

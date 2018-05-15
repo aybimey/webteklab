@@ -59,11 +59,10 @@
         <div class="responsive"><i data-icon="m" class="ion-navicon-round"></i></div>
 		
         <ul class="nav-menu list-unstyled" style="margin-top:0%;">
-          <li><a href="home.jsp" class="smoothScroll" >Home</a></li>
-          <li><a href="collections.jsp" class="smoothScroll">Collections</a></li>
-          <li><a href="planner.jsp" class="smoothScroll" style="color:#b8a07e;">Planner</a></li>
-          <li><a href="reservation.jsp" class="smoothScroll">Reservation</a></li>
-          <li><a href="transaction.jsp" class="smoothScroll">Transaction</a></li>
+          <li><a href="home.jsp" class="smoothScroll" ><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+          <li><a href="collections.jsp" class="smoothScroll"><i class="fa fa-female" aria-hidden="true"></i> Collections</a></li>
+          <li><a href="planner.jsp" class="smoothScroll" style="color:#b8a07e;"><i class="fa fa-shopping-basket" aria-hidden="true"></i> Planner</a></li>
+          <li><a href="reservation.jsp" class="smoothScroll"><i class="fa fa-th-list" aria-hidden="true"></i> Reservation</a></li>
           <li><a href="#" class="smoothScroll"><i class="fa fa-caret-square-o-right" aria-hidden="true"></i> Logout</a></li>
         </ul>
 
@@ -80,10 +79,69 @@
         <h2>Client History</h2>
       </div>
     </div>
+  <div class="container">
+  <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
 
-    
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
   </div>
-  <!-- End section journal -->
 
 
   <!-- start section footer -->

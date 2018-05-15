@@ -59,11 +59,10 @@
         <div class="responsive"><i data-icon="m" class="ion-navicon-round"></i></div>
 		
         <ul class="nav-menu list-unstyled" style="margin-top:0%;">
-          <li><a href="home.jsp" class="smoothScroll" >Home</a></li>
-          <li><a href="collections.jsp" class="smoothScroll">Collections</a></li>
-          <li><a href="planner.jsp" class="smoothScroll">Planner</a></li>
-          <li><a href="reservation.jsp" class="smoothScroll" style="color:#b8a07e;">Reservation</a></li>
-          <li><a href="transaction.jsp" class="smoothScroll">Transaction</a></li>
+          <li><a href="home.jsp" class="smoothScroll" ><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+          <li><a href="collections.jsp" class="smoothScroll"><i class="fa fa-female" aria-hidden="true"></i>  Collections</a></li>
+          <li><a href="planner.jsp" class="smoothScroll"><i class="fa fa-shopping-basket" aria-hidden="true"></i> Planner</a></li>
+          <li><a href="reservation.jsp" class="smoothScroll" style="color:#b8a07e;"><i class="fa fa-th-list" aria-hidden="true"></i> Reservation</a></li>
           <li><a href="#" class="smoothScroll"><i class="fa fa-caret-square-o-right" aria-hidden="true"></i> Logout</a></li>
         </ul>
 
@@ -81,8 +80,36 @@
       </div>
     </div>
 
-    
-  </div>
+  <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Client Name</th>
+      <th scope="col">Item to be reserved</th>
+      <th scope="col">Collection Name</th>
+      <th scope="col">Category</th>
+      <th scope="col">Price</th>
+      <th scope="col">Date Reserved</th>
+      <th scope="col">Date of Return</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2</th>
+      <td>Mark asd</td>
+      <td>Otto asd</td>
+      <td>@mdo asda</td>
+      <td>@mdo asd</td>
+      <td>@mdoasdasd</td>
+      <td>@mdoasdasd</td>
+      <td>
+      <a href="acceptreserve.jsp" class="btn btn-secondary">Accept</a>
+       <a href="deletereserve.jsp" class="btn btn-danger">Deny</a>
+   </td>
+    </tr>
+  </tbody>
+</table>
+
+  
   <!-- End section journal -->
 
 

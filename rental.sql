@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 15, 2018 at 01:22 AM
+-- Generation Time: May 15, 2018 at 07:50 AM
 -- Server version: 5.7.19
--- PHP Version: 7.1.9
+-- PHP Version: 5.6.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -54,38 +54,49 @@ CREATE TABLE IF NOT EXISTS `admin` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `category`
---
-
-DROP TABLE IF EXISTS `category`;
-CREATE TABLE IF NOT EXISTS `category` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `category_name` varchar(100) NOT NULL,
-  `shop_id` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `category`
---
-
-INSERT INTO `category` (`id`, `category_name`, `shop_id`) VALUES
-(1, 'wedding gown', 1),
-(2, 'wedding suit', 1);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `client`
 --
 
 DROP TABLE IF EXISTS `client`;
 CREATE TABLE IF NOT EXISTS `client` (
-  `client_id` int(100) NOT NULL AUTO_INCREMENT,
-  `username` text NOT NULL,
-  `password` text NOT NULL,
-  `client_name` varchar(40) NOT NULL,
-  PRIMARY KEY (`client_id`)
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(256) NOT NULL,
+  `last_name` varchar(256) NOT NULL,
+  `username` varchar(256) NOT NULL,
+  `gender` varchar(100) NOT NULL,
+  `age` int(11) NOT NULL,
+  `email` varchar(256) NOT NULL,
+  `password` varchar(256) NOT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `client`
+--
+
+INSERT INTO `client` (`user_id`, `first_name`, `last_name`, `username`, `gender`, `age`, `email`, `password`) VALUES
+(1, 'Venessa', 'Antonio', 'Antonio', 'Female', 20, 'jelly@gmail.com', '$2y$10$U5Y1PAgZEasMUMzC3.oJI.ZeUhOeDPfHycwQVZ4NxwKcWvPKH6K1y'),
+(2, 'Jelly', 'Grabanzor', 'Grabanzor', 'Female', 20, 'grab@gmail.com', '$2y$10$CCsyShRLHjqmtgQNNDNaP./isKfz1SHbJK1k8Oyfd53Sas7fzpc1C'),
+(6, 'John', 'Snow', 'Snow', 'Male', 27, 'snow@gmail.com', '$2y$10$hRDKezYlTtMEmxhJKL5/sutbq.rMIq4iIbQV8lV.4PZx8SQrb8HiO'),
+(7, 'Dora', 'explorer', 'explorer', 'Female', 35, 'dora@gmail.com', '$2y$10$HYkNKDwmgElP1YjuonEAv.ioMPywihQBtNYEUWMtAm3M5GFQPgylS'),
+(8, 'Archie', 'Andrews', 'Andrews', 'Male', 25, 'archie@yahoo.com', '$2y$10$a4f5U66yb9KDfy7ly.YDMu6rW1Bs3Mar3whXN7q//0tOVnjSIryuy'),
+(9, 'Bruno', 'Pluto', 'Pluto', 'Male', 18, 'pluto@yahoo.com', '$2y$10$dxACukhEbsnKwtp.CA8J6uQnBtdrXAbsfh3gwFGLrZsJlZz2oHiLa');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `collection`
+--
+
+DROP TABLE IF EXISTS `collection`;
+CREATE TABLE IF NOT EXISTS `collection` (
+  `collection_id` int(11) NOT NULL AUTO_INCREMENT,
+  `category_name` varchar(100) NOT NULL,
+  `collection_name` varchar(100) NOT NULL,
+  `collection_price` varchar(100) NOT NULL,
+  `shop_id` int(11) NOT NULL,
+  `collection_image` int(100) NOT NULL,
+  PRIMARY KEY (`collection_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -125,32 +136,6 @@ CREATE TABLE IF NOT EXISTS `serviceprovider` (
 
 INSERT INTO `serviceprovider` (`shop_id`, `shop_name`, `password`, `address`, `shop_info`, `shop_contact`) VALUES
 (1, 'fabshopyyyy', 'fabshop', '#47 gibraltar Road Near Hotel Elizabeth Baguio City', 'We sell your products all like gowns and mens apparel.', 'Call or Text Sherryl ann at 09812344123');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `shop_collection`
---
-
-DROP TABLE IF EXISTS `shop_collection`;
-CREATE TABLE IF NOT EXISTS `shop_collection` (
-  `cloth_id` int(50) NOT NULL,
-  `cloth_img` varchar(255) NOT NULL,
-  `cloth_name` varchar(255) NOT NULL,
-  `cloth_category` varchar(20) NOT NULL,
-  `cloth_info` varchar(255) NOT NULL,
-  `cloth_quantity` int(50) NOT NULL,
-  `cloth_price` int(50) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `shop_collection`
---
-
-INSERT INTO `shop_collection` (`cloth_id`, `cloth_img`, `cloth_name`, `cloth_category`, `cloth_info`, `cloth_quantity`, `cloth_price`) VALUES
-(1, '', 'Orange Dress', 'Dress', 'This is a dress', 100, 1000),
-(1, '', 'Black Suit', 'Mens apparel', 'tis is for men', 100, 1000),
-(3, '', 'awdawd', 'wadawd', 'awdawd', 112, 123);
 
 -- --------------------------------------------------------
 
