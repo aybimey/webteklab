@@ -2,20 +2,21 @@
 pageEncoding="ISO-8859-1"%>
 <%@page import="java.sql.*,java.util.*"%>
 <%
-String fname=request.getParameter("fname");
-String lname=request.getParameter("lname");
-String email=request.getParameter("email");
-String userid=request.getParameter("userid");
-String contact=request.getParameter("contact");
-String address=request.getParameter("address");
+String shop_owner=request.getParameter("shop_owner");
+String shop_name=request.getParameter("shop_name");
 String password=request.getParameter("password");
+String address=request.getParameter("address");
+String shop_contact=request.getParameter("shop_contact");
+String shop_info=request.getParameter("shop_info");
+
+
 try
 {
 Class.forName("com.mysql.jdbc.Driver");
-Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/student", "root", "");
+Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3308/rental", "root", "root");
 Statement st=conn.createStatement();
-int i=st.executeUpdate("insert into users(fname,lname,email,userid,contact,address,password)values('"+fname+"','"+lname+"','"+email+"','"+userid+"','"+contact+"','"+address+"','"+password+"')");
-out.println("Thank you for register ! Please <a href='index.html'>Login</a> to continue.");
+int i=st.executeUpdate("insert into serviceprovider(shop_owner,shop_name,password,address,shop_contact,shop_info)value('"+shop_owner+"','"+shop_name+"','"+password+"','"+address+"','"+shop_contact+"','"+shop_info+"')");
+out.println("Thank you for register ! Please <a href='index.jsp'>Login</a> to continue.");
 }
 catch(Exception e)
 {

@@ -36,7 +36,6 @@
   
   <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <%@ page import="java.sql.ResultSet" %>
 <%@ page import="java.sql.Statement" %>
 <%@ page import="java.sql.Connection" %>
@@ -59,18 +58,19 @@
 				<img src="images/gown.png">
 			</div>
 			<div class="logo-right" style="float:right; width:70%;">
-				<a href="home.jsp"><h1 style="font-family: 'Great Vibes', cursive; margin-top:2.5%;">Madamoiselle</h1></a>
+				<a href="index.html"><h1 style="font-family: 'Great Vibes', cursive; margin-top:2.5%; color:black">Madamoiselle</h1></a>
 			</div>
         </div>
 
         <div class="responsive"><i data-icon="m" class="ion-navicon-round"></i></div>
 		
         <ul class="nav-menu list-unstyled" style="margin-top:0%;">
-          <li><a href="home.jsp" class="smoothScroll" style="color:#b8a07e;"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
-          <li><a href="collections.jsp" class="smoothScroll"><i class="fa fa-female" aria-hidden="true"></i> Collections</a></li>
-          <li><a href="planner.jsp" class="smoothScroll"><i class="fa fa-shopping-basket" aria-hidden="true"></i> Planner</a></li>
-          <li><a href="reservation.jsp" class="smoothScroll"><i class="fa fa-th-list" aria-hidden="true"></i> Reservation</a></li>
-          <li><a href="#" class="smoothScroll"><i class="fa fa-caret-square-o-right" aria-hidden="true"></i> Logout</a></li>
+          <li><a href="home.jsp" class="smoothScroll" style="color:#b8a07e;">Home</a></li>
+          <li><a href="collections.jsp" class="smoothScroll">Collections</a></li>
+          <li><a href="planner.jsp" class="smoothScroll">Planner</a></li>
+          <li><a href="reservation.jsp" class="smoothScroll">Reservation</a></li>
+          <li><a href="transaction.jsp" class="smoothScroll">Transaction</a></li>
+          <li><a href="#" class="smoothScroll">Logout</a></li>
         </ul>
 
       </div>
@@ -85,12 +85,15 @@
       <div class="section-title text-center">
         <h2>My Shop</h2>
       </div>
+    </div>
       <hr>
-  <%
+      
+<form method="post">
+        <%
    try
    {
        Class.forName("com.mysql.jdbc.Driver");
-       String url="jdbc:mysql://localhost:3306/rental";
+       String url="jdbc:mysql://localhost:3308/rental";
        String username="root";
        String password="";
        String query="select * from serviceprovider";
@@ -102,19 +105,17 @@
    %>
    <div class ="jumbotron">
     <bold>Shop Name:</bold> <%=rs.getString("shop_name") %><br>
-    <bold>Shop Information:</bold> <%=rs.getString("shop_info") %><br>
+    <bold>Shop Infomation:</bold> <%=rs.getString("shop_info") %><br>
     <bold>Shop Address:</bold> <%=rs.getString("address") %><br>
     <bold>Shop Contact:</bold> <%=rs.getString("shop_contact") %><br>
-    </div>
-
-    </div>
-   <div class="container">
-      <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#myModal"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
-      </button>
-    </div>
     
+    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#myModal">
+  Edit
+</button>
+</div>
+
 <!-- The Modal -->
-<div class="modal fade" id="myModal">
+<div class="modal" id="myModal">
   <div class="modal-dialog">
     <div class="modal-content">
 
@@ -124,38 +125,22 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
       <div class="modal-body">
-        <form class="form-group" method="post" action="editshop.jsp">
-        <input class="form-control" type="hidden" name="shopid" value="<%=rs.getString("shop_id") %>">
-        <br>
-        Shop Name:<br>
-        <input class="form-control" type="text" name="shopname" value="<%=rs.getString("shop_name") %>">
-        <br>
-        Shop Information:<br>
-        <input class="form-control" type="text" name="shopaddress" value="<%=rs.getString("address") %>">
-        <br>
-        Shop Address:<br>
-        <input class="form-control" type="text" name="shopinfo" value="<%=rs.getString("shop_info") %>">
-        <br>
-        Shop Contact:<br>
-        <input class="form-control" type="text" name="shopcontact" value="<%=rs.getString("shop_contact") %>">
-        <br>
-        <div class="modal-footer">
-        <button class="btn btn-secondary" type="submit"><i class="fa fa-check" aria-hidden="true"></i> Submit</button>
-        <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-window-close" aria-hidden="true"></i> Close</button>
-        </div>
-        </form>
-
+        Modal body..
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
       </div>
 
     </div>
   </div>
 </div>
-   
-  
+    
+     <hr>
           <%
        }
    %>
-   
+   </div>
+</form>
    
    <%
         rs.close();
@@ -167,17 +152,13 @@
         e.printStackTrace();
    }
    %>
-
-
-
         
 
+              
+  <!-- End section journal -->
 
 
-
-
-
-
+  <!-- start section footer -->
   <div id="footer" class="text-center">
     <div class="container">
       <div class="socials-media text-center">
