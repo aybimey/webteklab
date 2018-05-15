@@ -36,6 +36,8 @@
   
   <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -50,7 +52,7 @@
 				<img src="images/gown.png">
 			</div>
 			<div class="logo-right" style="float:right; width:70%;">
-				<a href="index.html"><h1 style="font-family: 'Great Vibes', cursive; margin-top:2.5%;">Madamoiselle</h1></a>
+				<a href="home.jsp"><h1 style="font-family: 'Great Vibes', cursive; margin-top:2.5%;">Madamoiselle</h1></a>
 			</div>
         </div>
 
@@ -60,9 +62,9 @@
           <li><a href="home.jsp" class="smoothScroll" >Home</a></li>
           <li><a href="collections.jsp" class="smoothScroll">Collections</a></li>
           <li><a href="planner.jsp" class="smoothScroll">Planner</a></li>
-          <li><a href="reservation.jsp" class="smoothScroll" style="color:#b8a07e;">Reservation</a></li>
-          <li><a href="transaction.jsp" class="smoothScroll">Transaction</a></li>
-          <li><a href="#" class="smoothScroll">Logout</a></li>
+          <li><a href="reservation.jsp" class="smoothScroll" >Reservation</a></li>
+          <li><a href="transaction.jsp" class="smoothScroll" style="color:#b8a07e;">Transaction</a></li>
+          <li><a href="#" class="smoothScroll"><i class="fa fa-caret-square-o-right" aria-hidden="true"></i> Logout</a></li>
         </ul>
 
       </div>

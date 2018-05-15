@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 14, 2018 at 04:06 PM
+-- Generation Time: May 15, 2018 at 01:22 AM
 -- Server version: 5.7.19
 -- PHP Version: 7.1.9
 
@@ -124,8 +124,7 @@ CREATE TABLE IF NOT EXISTS `serviceprovider` (
 --
 
 INSERT INTO `serviceprovider` (`shop_id`, `shop_name`, `password`, `address`, `shop_info`, `shop_contact`) VALUES
-(1, 'fabshop', 'fabshop', '#47 gibraltar Road Near Hotel Elizabeth Baguio City', 'We sell your products all like gowns and mens apparel.', 'Call or Text Sherryl ann at 09812344123'),
-(2, '', '', '', '', '');
+(1, 'fabshopyyyy', 'fabshop', '#47 gibraltar Road Near Hotel Elizabeth Baguio City', 'We sell your products all like gowns and mens apparel.', 'Call or Text Sherryl ann at 09812344123');
 
 -- --------------------------------------------------------
 
