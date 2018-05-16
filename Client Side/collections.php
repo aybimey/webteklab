@@ -145,7 +145,7 @@
 												<h6 class="product_name">Alycia Wedding Gown</h6>
 											</div>
 										</div>
-										<div class="red_button add_to_cart_button"><a href="rent.php">$520.00 RENT NOW</a></div>
+										<div class="red_button add_to_cart_button"><a href="rent.php">Php 6,500.00 RENT NOW</a></div>
 									</div>
 									<br><br>
 
@@ -161,7 +161,7 @@
 												<h6 class="product_name">Ascelina Wedding Gown</h6>
 											</div>
 										</div>
-										<div class="red_button add_to_cart_button"><a href="rent.php">$610.00 RENT NOW</a></div>
+										<div class="red_button add_to_cart_button"><a href="rent.php">Php 6,500.00 RENT NOW</a></div>
 									</div>
 
 									<!-- Product 3 -->
@@ -176,7 +176,7 @@
 												<h6 class="product_name">Alvia Wedding Gown</h6>
 											</div>
 										</div>
-										<div class="red_button add_to_cart_button"><a href="rent.php">$120.00 RENT NOW</a></div>
+										<div class="red_button add_to_cart_button"><a href="rent.php">Php 5,000.00 RENT NOW</a></div>
 									</div>
 
 									<!-- Product 4 -->
@@ -191,7 +191,7 @@
 												<h6 class="product_name">Aemela Wedding Gown</h6>
 											</div>
 										</div>
-										<div class="red_button add_to_cart_button"><a href="rent.php">$410.00 RENT NOW</a></div>
+										<div class="red_button add_to_cart_button"><a href="rent.php">Php 5,500.00 RENT NOW</a></div>
 									</div>
 
 									<!-- Product 5 -->
@@ -206,7 +206,7 @@
 												<h6 class="product_name">Estelle Wedding Gown</h6>
 											</div>
 										</div>
-										<div class="red_button add_to_cart_button"><a href="rent.php">$180.00 RENT NOW</a></div>
+										<div class="red_button add_to_cart_button"><a href="rent.php">Php 6,500.00 RENT NOW</a></div>
 									</div>
 
 									<!-- Product 6 -->
@@ -221,7 +221,7 @@
 												<h6 class="product_name">Fleur Wedding Gown</h6>
 											</div>
 										</div>
-										<div class="red_button add_to_cart_button"><a href="rent.php">$520.00 RENT NOW</a></div>
+										<div class="red_button add_to_cart_button"><a href="rent.php">Php 6,500.00 RENT NOW</a></div>
 									</div>
 
 									<!-- Product 7 -->
@@ -251,7 +251,7 @@
 												<h6 class="product_name">Margoux Wedding Gown</h6>
 											</div>
 										</div>
-										<div class="red_button add_to_cart_button"><a href="rent.php">$120.00 RENT NOW</a></div>
+										<div class="red_button add_to_cart_button"><a href="rent.php">Php 4,500.00 RENT NOW</a></div>
 									</div>
 
 									<!-- Product 9 -->
@@ -266,7 +266,7 @@
 												<h6 class="product_name">Antoine Suit</h6>
 											</div>
 										</div>
-										<div class="red_button add_to_cart_button"><a href="rent.php">$410.00 RENT NOW</a></div>
+										<div class="red_button add_to_cart_button"><a href="rent.php">Php 3,500.00 RENT NOW</a></div>
 									</div>
 
 									<!-- Product 10 -->
@@ -281,7 +281,7 @@
 												<h6 class="product_name">Flavie Suit</h6>
 											</div>
 										</div>
-										<div class="red_button add_to_cart_button"><a href="rent.php">$180.00 RENT NOW</a></div>
+										<div class="red_button add_to_cart_button"><a href="rent.php">Php 3,000.00 RENT NOW</a></div>
 									</div>
 
 									<!-- Product 11 -->
@@ -296,7 +296,7 @@
 												<h6 class="product_name">Morgane Suit</h6>
 											</div>
 										</div>
-										<div class="red_button add_to_cart_button"><a href="rent.php">$180.00 RENT NOW</a></div>
+										<div class="red_button add_to_cart_button"><a href="rent.php">Php 2,500.00 RENT NOW</a></div>
 									</div>
 
 									<!-- Product 12 -->
@@ -311,7 +311,7 @@
 												<h6 class="product_name">Vadim Suit</h6>
 											</div>
 										</div>
-										<div class="red_button add_to_cart_button"><a href="rent.php">$520.00 RENT NOW</a></div>
+										<div class="red_button add_to_cart_button"><a href="rent.php">Php 3,000.00 RENT NOW</a></div>
 									</div>
 								</div>
 
