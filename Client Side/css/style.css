@@ -1,0 +1,192 @@
+:not(input) { /*non select*/
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none; 
+     -khtml-user-select: none; 
+       -moz-user-select: none; 
+        -ms-user-select: none; 
+            user-select: none; 
+}
+
+#mainNav .navbar-brand {
+    color: #f6e58d;
+}
+
+#mainNav .navbar-brand.active, #mainNav .navbar-brand:active, #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
+    color: #f6e58d;
+  }
+  
+#mainNav .navbar-nav .nav-item .nav-link {
+    font-size: 90%;
+    font-weight: 400;
+    padding: 0.75em 0;
+    letter-spacing: 1px;
+    color: white;
+    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+  
+#mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
+    color: #f6e58d;
+  }
+  
+
+.btn-primary {
+    background-color: #f6e58d;
+    border-color: #f6e58d;
+}
+
+.btn-primary:active, .btn-primary:focus, .btn-primary:hover {
+    background-color: #f6e58d !important;
+    border-color: #f6e58d !important;
+    color: white;
+  }
+  
+.btn-primary:active, .btn-primary:focus {
+    box-shadow: 0 0 0 0.2rem #0984e3 !important;
+  }
+
+
+  
+.info-btn {
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+}
+
+.info-btn:hover {
+    color: #d4d8d8;
+    border: 2px solid #d4d8d8;
+}
+
+.info-btn:focus, .info-btn:active  {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    display: none;
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.intro-lead-in {
+    color: #ffffff !important;
+    font-family: Century Gothic, sans-serif !important;
+    margin-bottom: 1em !important;
+
+}
+
+#mainNav.navbar-shrink {
+    padding-top: 0;
+    padding-bottom: 0;
+    background-color: #f5f5dc;/*#f7d794;*/
+  }
+
+  #mainNav.navbar-shrink .navbar-brand {
+    color: #cd6133;
+  }
+
+  #mainNav.navbar-shrink .nav-item .nav-link.active, #mainNav.navbar-shrink .navbar-nav .nav-item .nav-link:hover  {
+    color: #cd6133;
+  }
+
+  #mainNav.navbar-shrink .nav-item .nav-link{
+    color: #57606f;
+  }
+
+  .submitdiv{
+      text-align: center;
+      padding-bottom: 1em;
+  }
+
+  .submitbtn{
+      background-color: #cd6133;
+      border: none;
+      color:  #f5f5dc;
+  }
+  .submitbtn:active, .submitbtn:hover{
+    background-color: #ff793f !important;
+}
+
+section#contact {
+    background-color: #f3e198 /*#212529*/;
+    background-image: none !important;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  header.masthead {
+    text-align: center;
+    color: white;
+    background: #222222;
+    background-image: url("../img/bgsuit.jpg");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  .contactsubheading{
+      color: #cd6133 !important;
+  }
+
+  #sendMessageButton {
+      background: #cd6133;
+      border: none;
+      outline: none !important;
+      box-shadow: none !important;
+      color: white;
+      border-radius: 5px;
+  }
+
+  #sendMessageButton:active, #sendMessageButton:hover {
+    background: #ff793f !important;
+
+}
+
+
+.logo-img {
+    max-height: 5em;
+}
+
+#slulogo{
+    max-height: 10em;
+}
+
+.sched {
+    text-align: center;
+    padding:0em !important;
+}
+
+.sched img{
+    height: 23px;
+    width: 23px;
+}
+
+.scheddesc, .scheditem h6{
+    text-align: left;
+}
+
+.scheditem h3 {
+    border-bottom: 2px solid #cd6133;
+}
+
+.scheditem{
+    padding: 1em;
+}
+
+.registerdiv {
+    background: #f5f5dc !important;
+}
+
+.registereddiv {
+    text-align: center;
+}
+
+.intro-heading {
+    font-size: 50px !important;
+    margin-bottom: 0 !important;
+}
