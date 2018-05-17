@@ -68,7 +68,7 @@
           <div class="about-descr">
 
             <p class="p-heading">Share your creations</p>
-            <p class="separator">To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is. The European languages are members of the same family.English person.</p>
+            <p class="separator">Let the world know your creations. Share your talent to the workd. </p>
 
           </div>
 
@@ -87,7 +87,7 @@
           <div class="about-descr">
 
             <p class="p-heading">Accept & Reject reservations </p>
-            <p class="separator">To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is. The European languages are members of the same family.English person.</p>
+            <p class="separator">User can accept and reject reservation from the client.</p>
 
           </div>
 
@@ -124,7 +124,7 @@
           <div class="about-descr">
 
             <p class="p-heading">Have your own planner </p>
-            <p class="separator">To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is. The European languages are members of the same family.English person.</p>
+            <p class="separator">To easily track reservations made by clients.</p>
           </div>
 
         </div>
@@ -155,7 +155,7 @@
               <div class="journal-txt">
 
                 <h4><a href="blog-single.html">Step 1</a></h4>
-                <p class="separator">SO LETS MAKE THE MOST IS BEAUTIFUL
+                <p class="separator">UPLOAD YOUR WORK.
                 </p>
 
               </div>
@@ -171,7 +171,7 @@
               <div class="journal-txt">
 
                 <h4><a href="#blog-single.html">Step 2</a></h4>
-                <p class="separator">WE'RE GONA MAKE DREAMS COMES
+                <p class="separator">WAIT FOR THE CONFIRMATION OF THE SERVICE PROVIDER.
                 </p>
 
               </div>
@@ -187,7 +187,7 @@
               <div class="journal-txt">
 
                 <h4><a href="blog-single.html">Step 3</a></h4>
-                <p class="separator">NEW LIFE CIVILIZATIONS TO BOLDLY
+                <p class="separator">BE HAPPY! YOUR CREATION IS NOW SHARED!
                 </p>
 
               </div>
