@@ -121,14 +121,15 @@
 									<ul class="product_sorting">										
 									</ul>
 								</div>
-								<!----search---->
+								<!----search------> 
 								<hr class="star-light">
-          									<div class="form-group">
-          									<div class="input-group">
-            						<input type="text" name="search_text" id="search_text" placeholder="Search" class="form-control" />
-         						 </div>
-        						</div>
-
+								<form method="POST" action="phpinclude/search.php">
+			<input type="text" name="q" placeholder="Search..">
+			<input type="submit" name="search" value="Search">
+		</form> 
+		
+          							
+        	
 								<!-- Product Grid -->
 
 								<div class="product-grid">
@@ -441,3 +442,34 @@
 </body>
 
 </html>
+
+<script>
+$(document).ready(function(){
+
+ load_data();
+
+ function load_data(query)
+ {
+  $.ajax({
+   url:"includes/fetch-users.php",
+   method:"POST",
+   data:{query:query},
+   success:function(data)
+   {
+    $('#result').html(data);
+   }
+  });
+ }
+ $('#search_text').keyup(function(){
+  var search = $(this).val();
+  if(search != '')
+  {
+   load_data(search);
+  }
+  else
+  {
+   load_data();
+  }
+ });
+});
+</script>
