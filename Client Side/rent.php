@@ -112,7 +112,7 @@ $result = mysqli_query($conn, $query);
         <div layout-padding="">
             <div></div>
 
-            <form action="phpinclude/rent-dbase.php" name="userForm" method="POST">
+            <form action="phpinclude/rentgown-dbase.php" name="userForm" method="POST">
 
                 <div layout="row" layout-sm="column">
                 	<md-input-container flex-gt-sm="60">
@@ -123,6 +123,7 @@ $result = mysqli_query($conn, $query);
                             <div ng-message="required">Contact Number is Required.</div>
                         </div>
                     </md-input-container>
+<<<<<<< HEAD
 
                     <p style="font-size: 15px; margin-left: 3px; margin-top: 18px;">Size: </p>
                     <input type="hidden" name="size" value="{{user.size}}"/>
@@ -141,6 +142,45 @@ $result = mysqli_query($conn, $query);
                 </div>
                 
                 <md-button class="md-raised md-primary" style="width:100%; margin: 0px 0px;" type="submit" name="submit" ng-disabled="userForm.$invalid" name="submit">Submit</md-button>
+=======
+                </div><br>
+
+                <div layout="row" layout-sm="column">
+                    <md-input-container flex-gt-sm="60">
+                        <label style="font-size: 18px;">Date to Reserve</label>
+                        <input type="date" id="arrive" class="floatLabel" name="reservation_date" value="<?php echo date('Y-m-d'); ?>">
+                    </md-input-container>
+                </div>
+
+                <div layout="row" layout-sm="column">
+                    <md-input-container flex-gt-sm="60">
+                        <label style="font-size: 18px;">Quantity</label>
+                        <input type="number" id="arrive" class="floatLabel" name="quantity">
+                    </md-input-container>
+                </div>
+
+                <div>
+                    <p style="font-size: 15px; margin-left: 3px; margin-top: 18px;">Size: </p>
+                    <input type="hidden" name="size" value="{{user.size}}"/>
+                    <md-radio-group style="margin: 12px 0 19px;" ng-model="user.size" required>
+                    	<md-radio-button value="extra small">Extra Small/4 </md-radio-button>
+                        <md-radio-button value="small">Small/6 </md-radio-button>
+                        <md-radio-button value="medium">Medium/8 </md-radio-button>
+                        <md-radio-button value="medium large">Medium Large/12</md-radio-button><br>
+                        <md-radio-button value="large">Large/ 14</md-radio-button>
+                        <md-radio-button value="extra large">Extra Large/ 16</md-radio-button>
+                        <md-radio-button value="extra extra small">Extra Extra Large/ 18</md-radio-button>
+                    </md-radio-group>  
+                </div><br><br>
+
+                <div>
+                	<img src="img/sizes.jpg" align="center">
+                </div><br><br>
+
+                <div>
+                <md-button class="md-raised md-primary" style="width:100%; margin: 0px 0px;" type="submit" name="submit" ng-disabled="userForm.$invalid" name="submit">Submit</md-button></div>
+
+>>>>>>> d57424ed47e35464df96aa7f113c14e795c1ab5a
             </form>
         </div>
 </div>
