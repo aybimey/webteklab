@@ -123,7 +123,18 @@ $result = mysqli_query($conn, $query);
                             <div ng-message="required">Contact Number is Required.</div>
                         </div>
                     </md-input-container>
-                </div><br><br>
+                </div><br>
+
+                <div layout="row" layout-sm="column">
+                	<md-input-container flex-gt-sm="60">
+                        <label>Quantity</label>
+                        <input required type="number" step="any" name="quantity" ng-model="user.quantity"/>
+
+                        <div ng-if="userForm.quantity.$dirty" ng-messages="userForm.quantity.$error" role="alert" multiple>
+                            <div ng-message="required">Quantity is Required.</div>
+                        </div>
+                    </md-input-container>
+                </div><br>
 
                 <div layout="row" layout-sm="column">
                     <md-input-container flex-gt-sm="60">
@@ -136,17 +147,21 @@ $result = mysqli_query($conn, $query);
                     <p style="font-size: 15px; margin-left: 3px; margin-top: 18px;">Size: </p>
                     <input type="hidden" name="size" value="{{user.size}}"/>
                     <md-radio-group style="margin: 12px 0 19px;" ng-model="user.size" required>
-                    	<md-radio-button value="small">Extra Small </md-radio-button>
-                        <md-radio-button value="small">Small</md-radio-button>
-                        <md-radio-button value="medium">Medium</md-radio-button>
-                        <md-radio-button value="large">Large</md-radio-button>
-                        <md-radio-button value="small">Extra Large</md-radio-button>
-                        <md-radio-button value="small">Extra Extra Large</md-radio-button>
+                    	<md-radio-button value="extra small">Extra Small/4 </md-radio-button>
+                        <md-radio-button value="small">Small/6</md-radio-button>
+                        <md-radio-button value="medium">Medium/8</md-radio-button>
+                        <md-radio-button value="medium large">Medium Large/10</md-radio-button><br>
+                        <md-radio-button value="large">Large/12</md-radio-button>
+                        <md-radio-button value="extra large">Extra Large/14</md-radio-button>
+                        <md-radio-button value="extra extra large">Extra Extra Large/16</md-radio-button>
                     </md-radio-group>  
+                </div><br>
+
+                <div align="center">
+                	<img src="img/sizes.jpg" alt="sizes">
                 </div><br><br>
                 
                 <md-button class="md-raised md-primary" style="width:100%; margin: 0px 0px;" type="submit" name="submit" ng-disabled="userForm.$invalid" name="submit">Submit</md-button>
-s
             </form>
         </div>
 </div>

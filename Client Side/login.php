@@ -109,6 +109,14 @@
 								</div>
 							</div>
 
+							<div class="flex-sb-m w-full p-b-30">
+								<div>
+									<a href="forgot.php" class="txt1">
+										Forgot Password?
+									</a>
+								</div>
+							</div>
+
 							<div class="container-login100-form-btn">
 								<button class="login100-form-btn" type="submit" name="submit">
 									Login
