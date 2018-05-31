@@ -1,133 +1,208 @@
 <?php
-  include_once 'link.php';
-  require "phpinclude/checklogin.php";
+session_start();
+include 'includes/database.php';
+$username=$_SESSION['username'];
+$profile = new database;
+$profile->user_profile($username);
+$profile->ctransaction();
 ?>
 
 <!DOCTYPE html>
-<html lang = "en">
+<html lang="en">
 
 <head>
-   <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<!-- meta -->
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" http-equiv="Content-Type">
 
-    <title>Madamemoiselle</title>
+  <title>Mademoiselle</title>
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i|Playfair+Display:400,400i,700,700i,900,900i" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+
+  <!-- Libraries CSS Files -->
+  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="lib/magnific-popup/magnific-popup.css" rel="stylesheet">
+  <link href="lib/hover/hover.min.css" rel="stylesheet">
+
+  <!-- Blog Stylesheet File -->
+  <link href="css/blog.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="css/style.css" rel="stylesheet">
+
+  <!-- Responsive css -->
+  <link href="css/responsive.css" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/Logo.png">
+  
+  <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+ 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+<style>
+    .madam{color:black;
+    font-family:'Great vibes', cursive;
+    margin-top:2.5%;
+    color:#b8a07e;}
     
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom fonts for this template -->
-    <link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
-  <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
-  <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
-  <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
-  <link rel="stylesheet" type="text/css" href="plugins/jquery-ui-1.12.1.custom/jquery-ui.css">
-  <link rel="stylesheet" type="text/css" href="styles/categories_styles.css">
-  <link rel="stylesheet" type="text/css" href="styles/categories_responsive.css">
-    <style> 
-      .pads{
-        margin-top: 15px;
-      }
-      .boxes{
-        margin-bottom: 15px;
-      }
-      div.titles {
-        font-size: 30px;
-      }
-      .copyright{
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-      }
-      .masthead{
-        height: 420px;
-        margin-top: -85px;
-      }
-    </style>
+    .madam:hover{
+        color:black;
+    }
+    
+    ul li a:hover{
+        color:#b8a07e;  
+    }
+    
+    .bcontainer{
+        position:fixed;
+        z-index: 999;
+        opacity:0.7;
+    }
+    
+    .bcontainer:hover{
+        opacity:1;
+    }
+    
+    .login{
+        margin-left:1%;
+    }
+	
+	.logo-bottom ul{
+		text-decoration:none;
+		list-style-type:none;
+	}
+	
+	.logo-bottom ul li a{
+		font-size:130%;
+	}
+	
+	.logo-bottom ul li a:hover{
+		color:#b8a07e;
+		
+	}
+    
+</style>
 </head>
+<body>
 
- <body id="page-top">
+  <!-- start section navbar -->
+  <!-- start section navbar -->
 
-    <!-- Navigation -->
-   <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top" style="font-weight: bold;">Madamemoiselle</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav text-uppercase ml-auto">
-            <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="home.php" style="font-weight: bold;">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="collections.php" style="font-weight: bold;">Collections</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="transaction.php" style="font-weight: bold;">My Transaction</a>
-            </li>
-             <li class="nav-item">
-              <form action ="phpinclude/logout-dbase.php" method="POST">
-                <button type="submit" name="submit" style=" -moz-appearance: none; -webkit-appearance: none; -ms-appearance: none; appearance: none; -moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out; -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out; -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out; transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out; font-weight: 300; height: 2.85rem; line-height: 2.95rem;  display: inline-block; text-align: center; padding: 0 1.5rem; text-decoration: none; text-transform: uppercase; white-space: nowrap; cursor: pointer; border: 0; border-radius: 2px; font-weight: bold;"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbspLogout </button>
-              </form>
-            </li>
-          </ul>
-        </div>
+  <!-- End section navbar -->
+  
+  <!-- End section navbar -->
+<div id="header" class="home" style="height:20%;">
+
+    <div class="container" style="height:20%;">
+      <div class="header-content" style=" width:100%; display:inline-block; margin-top:30%; height:20%;">    
       </div>
-    </nav>
-    <!-- Header -->
-    <header class="masthead bg-primary text-white text-center" >
-      <div class="container">
-        <hr class="star-light">
-      </div>
-    </header>
-
-
+    </div> 
+</div>
+  
+  <!-- Home section 1 -->
+  
+  
+  <!--Home Section 2 -->
+  <br>
+  <br>
+  <center><h2>Accepted Reservation</h2></center>
+	<br>
+  <div class="container-fluid">
+  <table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Reserved Item</th>
      
-        <div class="container-wrapper">
-        <div class="row">
-       
-        </div>
+      <th scope="col">Quantity</th>
+     
+      <th scope="col">Date Reserved</th>
+      <th scope="col">Shop Name</th>
+      <th scope="col">Contact</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+  <?php 
+				foreach($profile->ctransaction as $tran)
+					{ ?>
+  <tr>
+  
+      
+      <td><?php echo $tran['reservation_collectionname'];?></td>
+	
+	  <td><?php echo $tran['reservation_quantity'];?></td>
+	 
+	  <td><?php echo $tran['reservation_datereserved'];?></td>
+	  <td><?php echo $tran['shop_name'];?></td>
 
-      <?php  
-        $connect = mysqli_connect("localhost", "root", "", "rental");  
-        $query = "SELECT * FROM transaction";  
-        $result = mysqli_query($connect, $query);  
-      ?>  
-          <div id="order_table" style="margin-top: 15px;">  
-                <table class="table table-striped table-bordered text-center">  
-                    <tr>  
-                          <th width="10%">Shop Name</th>  
-                          <th width="10%">Quantity</th>  
-                          <th width="10%">Item to be Reserved</th>  
-                          <th width="10%">Collection Name</th>  
-                          <th width="10%">Price</th>
-                          <th width="10%">Date Reserved</th>
-                          <th width="10%">Status</th>
-                    </tr>  
-                <?php  
-                while($row = mysqli_fetch_array($result))  
-                {  
-                ?>  
-                    <tr>  
-                          <td><?php echo $row["shop_name"]; ?></td>  
-                          <td><?php echo $row["quantity"]; ?></td>  
-                          <td><?php echo $row["reserved_item"]; ?></td>  
-                          <td><?php echo $row["collection_name"]; ?></td>  
-                          <td><?php echo $row["price"]; ?></td>  
-                          <td><?php echo $row["reservation_date"]; ?></td> 
-                          <td><?php echo $row["status"]; ?></td> 
-                    </tr>  
-                <?php  
-                }  
-                ?>  
-                </table>  
-          </div>  
+      <td><?php echo $tran['reservation_contact'];?></td>
+      
+      
+ 
+    </tr>
+	<?php	}
+						?>
+	</tbody>
+  </table>
+  <!-- end home section 1 -->
+
+  
+  
+  <!-- End section journal -->
+
+
+  
+
+
+  <!-- start section footer -->
+  <div id="footer" class="text-center">
+    <div class="container">
+      <div class="socials-media text-center">
+
+        <ul class="list-unstyled">
+          <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+          <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+          <li><a href="#"><i class="ion-social-instagram"></i></a></li>
+          <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
+          <li><a href="#"><i class="ion-social-tumblr"></i></a></li>
+          <li><a href="#"><i class="ion-social-dribbble"></i></a></li>
+        </ul>
+
+      </div>
+
+      <p>&copy; 2018 Mademoiselle.com. All rights reserved.</p>
+
+      <div class="credits">
       </div>
 
     </div>
-   
+  </div>
+  <!-- End section footer -->
+
+  
+  <!-- Contact Form JavaScript File -->
+  <script src="contactform/contactform.js"></script>
+
+ 
 
 </body>
+
 </html>
+
+  
+ 
+    

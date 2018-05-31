@@ -9,7 +9,7 @@ if (isset($_POST['submit'])){
 	
 	//Error handlers
 	//Check for empty fields
-	if(empty($first_name) || empty($last_name) || empty($username) || empty($gender) || empty($age) || empty($email) || empty($password) || empty($confirmpassword)){
+	if(empty($first_name) || empty($last_name) || empty($username) || empty($city) || empty($province) || empty($gender) || empty($age) || empty($contactnumber) ||empty($email) || empty($password) || empty($confirmpassword)){
 
 		$register->url("../register.php?signup=empty");
 		exit();
@@ -27,9 +27,10 @@ if (isset($_POST['submit'])){
 				//Hash password
 				$hashedPwd = password_hash($password, PASSWORD_DEFAULT);
 				//Insert user into the database
-				$query = "INSERT INTO client(first_name, last_name, username, gender, age, email, password) VALUES ('$first_name', '$last_name', '$username', '$gender', '$age', '$email', '$hashedPwd')";
+				$query = "INSERT INTO client (first_name, last_name, username, city, province, gender, age, contactnumber, email, password) VALUES ('$first_name', '$last_name', '$username', '$city', '$province', '$gender', '$age', '$contactnumber', '$email', '$hashedPwd')";
+				
 				if($register->signup($query)){
-				$register->url("../login.php?=signup=success");
+				$register->url("../modal.php?=signup=success");
 				exit();
 				}
 			}
@@ -38,7 +39,3 @@ if (isset($_POST['submit'])){
 	$register->url("../register.php");
 	exit();
 }
-
-
-	
-	

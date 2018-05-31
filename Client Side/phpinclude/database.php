@@ -1,7 +1,7 @@
 <?php
 class database{
-	public $host="localhost";
-	public $username="root";
+	public $host="192.168.5.81";
+	public $username="root1";
 	public $pass="";
 	public $db_name="rental";
 	public $conn;
@@ -27,13 +27,11 @@ class database{
 	}
 	
 	public function user_profile($username){
-		$query=$this->conn->query("Select * from client where username='$username'");
+		$query=$this->conn->query("Select * from clientaccepted where username='$username'");
 		$row=$query->fetch_array(MYSQLI_ASSOC);
 		if($query->num_rows > 0){
 			$this->data[]=$row;
 		}
 		return $this->data;
 	}
-
-
 }

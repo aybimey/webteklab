@@ -8,8 +8,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Madamemoiselle</title>
-    <link rel="icon" href="img/Logo.png">
+    <title>Mademoiselle</title>
+   
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">

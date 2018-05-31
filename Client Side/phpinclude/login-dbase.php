@@ -13,7 +13,7 @@ if (empty($username) || empty($password)){
 		$register->url("../index.php?login=empty");
 		exit();
 	}else{	
-		$query = "SELECT * FROM client WHERE username = '$username'";
+		$query = "SELECT * FROM clientaccepted WHERE username = '$username'";
 		$result = mysqli_query($register->conn, $query);
 		$resultcheck = mysqli_num_rows($result);
 		if ($resultcheck < 1){
@@ -26,9 +26,11 @@ if (empty($username) || empty($password)){
 					exit();
 				}elseif ($password == true){
 					//Login the user here
+					$_SESSION['user_id'] = $row['user_id'];
 					$_SESSION['username'] = $row['username'];
 					$_SESSION['first_name'] = $row['first_name'];
 					$_SESSION['last_name'] = $row['last_name'];
+					$_SESSION['contactNumber'] = $row['contactNumber'];
 					$register->url("../home.php");
 					exit();
 				}
