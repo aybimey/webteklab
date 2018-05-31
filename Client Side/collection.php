@@ -147,7 +147,7 @@
 			<li><a href="collection.php" ><i class="fa fa-male" aria-hidden="true"></i>&nbspCollections</a></li>
 			<li><a href="transaction.php"><i class="fa fa-inbox" aria-hidden="true"></i>&nbspTransactions</a></li>
 			<li><a href="#" class="smoothScroll"><form action = "includes/logout-dbase.php" method="POST">
-				<i class="fa fa-caret-square-o-right" aria-hidden="true"></i> <button type ="submit" name ="submit" style="background-color:white; border:none; color:#909497; cursor:pointer;"><strong><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</strong> </button></form></a></li>
+			<button type ="submit" name ="submit" style="background-color:white; border:none; color:#909497; cursor:pointer;"><strong><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</strong> </button></form></a></li>
 		</ul>
       </div>
     </div>

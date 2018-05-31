@@ -1,7 +1,7 @@
 <?php
 class database{
-	public $host="192.168.5.81";
-	public $username="root1";
+	public $host="localhost";
+	public $username="root";
 	public $pass="";
 	public $db_name="rental";
 	public $conn;

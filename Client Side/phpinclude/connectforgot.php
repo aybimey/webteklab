@@ -1,6 +1,6 @@
 <?php
 
-$connection = mysqli_connect('192.168.5.81', 'root1', 'Rvm@i[9)0?~=');
+$connection = mysqli_connect('localhost', 'root', 'Rvm@i[9)0?~=');
 
 if (!$connection){
 

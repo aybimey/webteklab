@@ -120,11 +120,11 @@
 		
 		
         <ul class="nav-menu list-unstyled" style="margin-top:0%;">
-			<li><a href="home.php">Home</a></li>
-			<li><a href="collection.php" style="color:#b8a07e;">Collections</a></li>
-			<li><a href="transaction.php">Transactions</a></li>
+			<li><a href="home.php"><i class="fa fa-home" aria-hidden="true"></i>&nbspHome</a></li>
+			<li><a href="collection.php" style="color:#b8a07e;"><i class="fa fa-male" aria-hidden="true"></i>&nbspCollections</a></li>
+			<li><a href="transaction.php"><i class="fa fa-inbox" aria-hidden="true"></i>&nbspTransactions</a></li>
 			<li><a href="#" class="smoothScroll"><form action = "includes/logout-dbase.php" method="POST">
-				<i class="fa fa-caret-square-o-right" aria-hidden="true"></i> <button type ="submit" name ="submit" style="background-color:white; border:none; color:#909497; cursor:pointer;"><strong> Logout</strong> </button></form></a></li>
+				<button type ="submit" name ="submit" style="background-color:white; border:none; color:#909497; cursor:pointer;"><strong><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</strong> </button></form></a></li>
 		</ul>
       </div>
     </div>
