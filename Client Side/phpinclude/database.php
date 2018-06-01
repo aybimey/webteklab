@@ -1,7 +1,7 @@
 <?php
 class database{
-	public $host="localhost";
-	public $username="root";
+	public $host="192.168.0.119";
+	public $username="root1";
 	public $pass="";
 	public $db_name="rental";
 	public $conn;
@@ -16,7 +16,6 @@ class database{
 		}
 		
 	}
-
 		public function url($url){
 		header("location:".$url);
 	}

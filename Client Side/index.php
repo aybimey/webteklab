@@ -1,3 +1,7 @@
+<?php
+    include_once 'link.php';
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 

@@ -1,7 +1,7 @@
 <?php
 class database{
-	public $host="localhost";
-	public $username="root";
+	public $host="192.168.0.119";
+	public $username="root1";
 	public $pass="";
 	public $db_name="rental";
 	public $conn;
@@ -26,7 +26,7 @@ class database{
 	}
 	
 	public function user_profile($username){
-		$query=$this->conn->query("Select * from client where username='$username'");
+		$query=$this->conn->query("Select * from clientaccepted where username='$username'");
 		$row=$query->fetch_array(MYSQLI_ASSOC);
 		if($query->num_rows > 0){
 			$this->data[]=$row;
@@ -109,6 +109,14 @@ class database{
 		return $this->ctransaction;
 	}
 	
+	public function rtransaction(){
+		$query=$this->conn->query("Select * from request_reservation where req_contactnumber = '".$_SESSION['email']."'");
+		while($row=$query->fetch_array(MYSQLI_ASSOC)){
+			$this->rtransaction[]=$row;
+		}
+		return $this->rtransaction;
+	}
+	
 	public function search_profile($shop_name){
 		$query=$this->conn->query("Select * from collection where shop_name='$shop_name'");
 		$row=$query->fetch_array(MYSQLI_ASSOC);
@@ -116,6 +124,16 @@ class database{
 			$this->data[]=$row;
 		}
 		return $this->data;
+	}
+	
+	public function cancelaccept(){
+		$query=$this->conn->query("DELETE from accepted_reservation where reservation_id='".$_GET['id']."'");
+		header("location:transaction.php");
+	}
+	
+	public function cancelrequest(){
+		$query=$this->conn->query("DELETE from request_reservation where req_id='".$_GET['id']."'");
+		header("location:transaction.php");
 	}
 	
 	

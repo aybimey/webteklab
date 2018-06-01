@@ -150,7 +150,7 @@ $profile->user_profile($username);
         <div class="col-lg-4 ">
           <div class="div-img-bg">
             <div class="about-img">
-              <img src="images/wedding8.jpg" class="img-responsive" alt="me" style="width:350px;">
+              <img src="images/home.jpg" class="img-responsive" alt="me" style="width:350px;">
             </div>
           </div>
         </div>

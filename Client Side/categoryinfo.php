@@ -140,13 +140,13 @@
   <div id="about" class="paddsection" style="width:100%;" >
 	<div class="row justify-content-between">
 	
-	<div id="left" style="width:20%; background-color:pink; float:left; padding:2%; border-radius:10px; background-color:#D0E3CC; height:87%;">
+	<div id="left" style="width:20%; background-color:pink; float:left; padding:2%; border-radius:10px; background-color:#D0E3CC; height:87%; background-color: #de87a7;">
 	<center>
 		<input type="text" name="search_text" id="search_text" size="90" placeholder="Search" class="form-control" />
 
-	<hr>
+	<hr style="background-color: white;">
 	<h3 style="font-family: 'Raleway', sans-serif; font-size: 35px; font-weight: bold;">Categories</h3>
-	<hr>
+	<hr style="background-color: white;">
 	<h5 style="font-family: 'Raleway', sans-serif; font-size: 22px; font-weight: bold;">By name</h5>
 	<?php 
 		foreach($category->category as $cat)
@@ -155,7 +155,7 @@
 		<li style="font-family: 'Raleway', sans-serif; font-size: 18px;"><?php echo $cat['category_name'];?></li>
 		</a>
 		<?php } ?>
-	<hr>
+	<hr style="background-color: white;">
 	
 	
 	</center>
