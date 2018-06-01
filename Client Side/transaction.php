@@ -2,6 +2,7 @@
 session_start();
 include 'includes/database.php';
 $username=$_SESSION['username'];
+$email = $_SESSION['email'];
 $profile = new database;
 $profile->user_profile($username);
 $profile->ctransaction();
@@ -126,12 +127,11 @@ $profile->ctransaction();
   <thead class="thead-dark">
     <tr>
       <th scope="col">Reserved Item</th>
-     
       <th scope="col">Quantity</th>
-     
       <th scope="col">Date Reserved</th>
       <th scope="col">Shop Name</th>
       <th scope="col">Contact</th>
+      <th scope="col"></th>
     </tr>
   </thead>
   <tbody>
@@ -140,20 +140,13 @@ $profile->ctransaction();
 				foreach($profile->ctransaction as $tran)
 					{ ?>
   <tr>
-  
-      
-      <td><?php echo $tran['reservation_collectionname'];?></td>
-	
+    <td><?php echo $tran['reservation_collectionname'];?></td>
 	  <td><?php echo $tran['reservation_quantity'];?></td>
-	 
 	  <td><?php echo $tran['reservation_datereserved'];?></td>
 	  <td><?php echo $tran['shop_name'];?></td>
-
-      <td><?php echo $tran['reservation_contact'];?></td>
-      
-      
- 
-    </tr>
+    <td><?php echo $tran['reservation_contact'];?></td>
+    <td><?php echo $tran[''];?></td>
+  </tr>
 	<?php	}
 						?>
 	</tbody>

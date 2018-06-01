@@ -55,6 +55,8 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 
 <style>
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
     .madam{color:black;
     font-family:'Great vibes', cursive;
     margin-top:2.5%;
@@ -140,21 +142,17 @@
 	
 	<div id="left" style="width:20%; background-color:pink; float:left; padding:2%; border-radius:10px; background-color:#D0E3CC; height:87%;">
 	<center>
+		<input type="text" name="search_text" id="search_text" size="90" placeholder="Search" class="form-control" />
 
-    <form action="search-dbase.php" method="GET">
-      <input name="search" type="text" placeholder="Type here">
-      <input name="submit" type="submit" value="Search">
-    </form>
-	
 	<hr>
-	<h3>Categories<h3>
+	<h3 style="font-family: 'Raleway', sans-serif; font-size: 35px; font-weight: bold;">Categories</h3>
 	<hr>
-	<h5>By name</h5>
+	<h5 style="font-family: 'Raleway', sans-serif; font-size: 22px; font-weight: bold;">By name</h5>
 	<?php 
 		foreach($category->category as $cat)
 						{ ?>
 		<a href="categoryinfo.php?id=<?php echo $cat['category_id'];?>" style="cursor:pointer; color:black;">
-		<li><?php echo $cat['category_name'];?></li>
+		<li style="font-family: 'Raleway', sans-serif; font-size: 18px;"><?php echo $cat['category_name'];?></li>
 		</a>
 		<?php } ?>
 	<hr>
@@ -167,7 +165,7 @@
 	<center><h1></h1></center>
 		<div class="journal-block" > 
 			<div class="row" style="margin-left:5%;" >
-				<div class ="a">
+				<div class ="a" id="result">
 					<?php 
 						foreach($category->cat as $category)
 						{ ?>
@@ -233,9 +231,8 @@
  
 
 </body>
-
 </html>
 
-  
+ 
  
     

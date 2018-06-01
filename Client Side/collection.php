@@ -57,6 +57,9 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 
 <style>
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Parisienne');
+
     .madam{color:black;
     font-family:'Great vibes', cursive;
     margin-top:2.5%;
@@ -68,6 +71,10 @@
     
     ul li a:hover{
         color:#b8a07e;  
+    }
+
+    img:hover{
+    	zoom: 105%;
     }
     
     .bcontainer{
@@ -160,23 +167,18 @@
   <div id="about" class="paddsection" style="width:100%;" >
   <div class="row justify-content-between">
   
-	<div id="left" style="width:20%; background-color:pink; float:left; padding:2%; border-radius:10px; background-color:#D0E3CC; height:87%;">
+	<div id="left" style="width:20%; background-color: pink; float:left; padding:2%; border-radius:10px; background-color:#D0E3CC; height:87%;">
 	<center>
-
-		<form action="includes/search-dbase.php" method="GET">
-			<input name="search" type="text" placeholder="Type here">
-			<input name="submit" type="submit" value="Search">
-		</form>
-	
+		<input type="text" name="search_text" id="search_text" size="90" placeholder="Search" class="form-control" />
 	<hr>
-	<h3>Categories<h3>
+	<h3 style="font-family: 'Raleway', sans-serif; font-size: 35px; font-weight: bold;">Categories</h3>
 	<hr>
-	<h5>By name</h5>
+	<h5 style="font-family: 'Raleway', sans-serif; font-size: 22px; font-weight: bold;">By name</h5>
 	<?php 
 		foreach($collection->category as $cat)
         { ?>
 		<a href="categoryinfo.php?id=<?php echo $cat['category_id'];?>" style="cursor:pointer; color:black;">
-		<li><?php echo $cat['category_name'];?></li>
+		<li style="font-family: 'Raleway', sans-serif; font-size: 18px;"><?php echo $cat['category_name'];?></li>
 		</a>
 		<?php } ?>
 	<hr>
@@ -188,33 +190,17 @@
 		
 	
 	<div id="right" style="width:80%; float:right;">
-		<center><h1>Featured</h1></center>
+		<center style="font-family: 'Parisienne', cursive; font-size: 55px; font-weight: bold;">Featured</center>
 		<div class="journal-block" > 
 			<div class="row" style="margin-left:5%;" >
-				<div class ="a">
-					<?php 
-						foreach($collection->featured as $col){ 
-                    ?>
-						<a href="collectioninfo.php?id=<?php echo $col['collection_id'];?>" style="cursor:pointer; color:black;"><div class="journal-info mb-30" style="background-color:#DAC6B5; display:inline-block; " >
-							<img src = 'images/<?php echo $col['filename']; ?>' width="300" height="400" class="img-responsive" alt="img"/>
-								<div class="journal-txt" style="width:300;">
-								<center>
-								<h4>Code: <?php echo $col['collection_name'];?></h4>
-								
-								<p style="color:white; font-size:100%;"><strong>Price: <?php echo $col['collection_price'];?>
-								</strong></p>
-								</center>
-								</div>
-						</div></a>
-				  <?php } ?>
-				</div>
+				<div class ="a" id="result"></div>
 		  </div>
 		</div>
 		
 		
 		<br>
 		<br>
-		<center><h1>Recent Uploads</h1></center>
+		<center style="font-family: 'Parisienne', cursive; font-size: 55px; font-weight: bold;">Recent Uploads</center>
 		<div class="journal-block" > 
 			<div class="row" style="margin-left:5%;" >
 				<div class ="a">
@@ -287,6 +273,33 @@
 
 </html>
 
-  
- 
-    
+<script>
+$(document).ready(function(){
+
+ load_data();
+
+ function load_data(query)
+ {
+  $.ajax({
+   url:"search-again.php",
+   method:"POST",
+   data:{query:query},
+   success:function(data)
+   {
+    $('#result').html(data);
+   }
+  });
+ }
+ $('#search_text').keyup(function(){
+  var search = $(this).val();
+  if(search != '')
+  {
+   load_data(search);
+  }
+  else
+  {
+   load_data();
+  }
+ });
+});
+</script>

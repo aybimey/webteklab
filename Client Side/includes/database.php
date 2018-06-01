@@ -26,7 +26,7 @@ class database{
 	}
 	
 	public function user_profile($username){
-		$query=$this->conn->query("Select * from clientaccepted where username='$username'");
+		$query=$this->conn->query("Select * from client where username='$username'");
 		$row=$query->fetch_array(MYSQLI_ASSOC);
 		if($query->num_rows > 0){
 			$this->data[]=$row;

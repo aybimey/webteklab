@@ -53,6 +53,9 @@ $profile->user_profile($username);
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 
 <style>
+@import url('https://fonts.googleapis.com/css?family=Parisienne');
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
     .madam{color:black;
     font-family:'Great vibes', cursive;
     margin-top:2.5%;
@@ -153,14 +156,14 @@ $profile->user_profile($username);
         </div>
 
         <div class="col-lg-7">
-          <div class="about-descr">
+          <div class="about-descr"><br><br><br>
 			 <?php 
 				foreach($profile->data as $col)
 					{ ?>
-            <p class="p-heading">Hi <?php echo $col['first_name'];?>
+            <p class="p-heading" style="font-family: 'Quicksand', sans-serif; font-size: 40px; font-weight: bold; color: #1a1a1a;">Hi <?php echo $col['first_name'];?>
 							<?php echo $col['last_name'];?>! </p>
-			<p class="separator">Username: <?php echo $col['username'];?></p>
-            <p class="separator">Contact number: <?php echo $col['email'];?></p>
+			<p class="separator" style="font-family: 'Quicksand', sans-serif; font-size: 22px;">Username: <?php echo $col['username'];?></p>
+            <p class="separator" style="font-family: 'Quicksand', sans-serif; font-size: 22px;">Contact number: <?php echo $col['email'];?></p>
 			<?php	}
 						?>
           </div>

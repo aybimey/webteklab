@@ -45,6 +45,9 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 
 <style>
+@import url('https://fonts.googleapis.com/css?family=Parisienne');
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
     .madam{color:black;
     font-family:'Great vibes', cursive;
     margin-top:2.5%;
@@ -130,11 +133,6 @@
     </div> 
 </div>
 
-
-<style>
-@import url('https://fonts.googleapis.com/css?family=Parisienne');
-@import url('https://fonts.googleapis.com/css?family=Quicksand');
-</style>  
   <!-- Home section 1 -->
   <div id="about" class="paddsection">
     <div class="container">

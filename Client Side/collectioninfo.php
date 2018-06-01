@@ -56,6 +56,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 
 <style>
+@import url('https://fonts.googleapis.com/css?family=Raleway');
     .madam{color:black;
     font-family:'Great vibes', cursive;
     margin-top:2.5%;
@@ -67,6 +68,10 @@
     
     ul li a:hover{
         color:#b8a07e;  
+    }
+
+    img:hover{
+    zoom: 125%;
     }
     
     .bcontainer{
@@ -108,7 +113,7 @@
 	  
 	  <div class="logo" style=" width:30%;">
 			<div class="logo-left" style="float:left; width:30%;">
-                            <img src="images/gown.png">
+      <img src="images/gown.png">
 			</div>
 			<div class="logo-right" style="float:right; width:70%;">
 				<a href="home.jsp"><h1 class ="madam">Mademoiselle</h1></a>
@@ -150,7 +155,7 @@
         </div>
 
         <div class="col-lg-7">
-          <div class="about-descr">
+          <div class="about-descr" style="font-family: 'Raleway', sans-serif; font-size: 18px;">
 
             <p class="p-heading"><?php echo $rent['collection_name'];?></p>
             <p class="separator"><?php echo $rent['collection_info'];?></p>
@@ -159,7 +164,7 @@
 
           </div>
 		  <br>
-		  <h5>Rent Now</h5>
+		  <h5 style="font-family: 'Raleway', sans-serif; font-size: 19px; font-weight: bold;">Rent Now</h5>
 		   
 		  
 		  
@@ -167,12 +172,12 @@
 		   
 
 			<form action="includes/rental.php?item=<?php echo $rent['collection_name']?>&amp;category=<?php echo $rent['category_name']?>&amp;price=<?php echo $rent['collection_price']?>&amp;shop=<?php echo $rent['shop_name']?>" method="post">
-			<label style="font-size: 18px;">When will you reserve this?</label>
+			<label style="font-family: 'Raleway', sans-serif; font-size: 18px;">When will you reserve this?</label>
                 <input type="date" name="req_datereserved" value="<?php echo date('Y-m-d'); ?>">
                 <br>
-			<label style="font-size: 18px;">Quantity Available: </label>
+			<label style="font-family: 'Raleway', sans-serif; font-size: 18px;">Quantity Available: </label>
                         <input type="number" id="arrive" class="floatLabel" name="req_quantity" placeholder="<?php echo $rent['collection_quantity'];?>">
-			<br>
+			<br><br>
 	
 			         <div class="col-lg-12">
                   <center><input type="submit" name="submit" class="btn btn-defeault btn-send" value="Submit"></center>
