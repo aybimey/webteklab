@@ -1,0 +1,165 @@
+﻿*{
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial;
+    padding: 10px;
+    background: #f1f1f1;
+}
+
+/* Header/Blog Title */
+.header {
+    padding: 30px;
+    text-align: center;
+    background: #def2f1;
+}
+
+    .header h1 {
+        font-size: 50px;
+    }
+
+/* Style the top navigation bar */
+.topnav {
+    overflow: hidden;
+    background-color: #17252a;
+}
+
+    /* Style the topnav links */
+    .topnav a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+        /* Change color on hover */
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {
+    float: left;
+    width: 75%;
+}
+
+/* Right column */
+.rightcolumn {
+    float: left;
+    width: 25%;
+    background-color: #f1f1f1;
+    padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+    background-color: #aaa;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Footer */
+.footer {
+    padding: 20px;
+    text-align: center;
+    background: #ddd;
+    margin-top: 20px;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+    .leftcolumn, .rightcolumn {
+        width: 100%;
+        padding: 0;
+    }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+    .topnav a {
+        float: none;
+        width: 100%;
+    }
+}
+
+
+
+.logbod {
+    background-image: url("../images/MADAME.png");
+    background-size: cover;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+
+.logdes {
+    float: right;
+    margin-bottom: 5%;
+    margin-right: 35px;
+    
+
+    background-color: #edf5e1;
+    position: absolute;
+    margin-top: 10%;
+    right: 540px;
+    width: 440px;
+    border: 1px solid grey;
+    padding: 10px;
+    text-align: center;
+}
+
+
+.logdrop {
+    float: right;
+    margin-bottom: 5%;
+    margin-right: 70px;
+    width: 300px;
+}
+
+.logfields {
+    float: right;
+    margin-bottom: 5%;
+    margin-right: 70px;
+    width: 300px;
+}
+
+.regarea {
+    float: right;
+    margin-bottom: 5%;
+    margin-right: 700px;
+    width: 300px;
+}
+
+.requests {
+    float: right;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-right: 20px;
+    width: 90%;
+}
+
+.requests h4{
+    margin-bottom: 2%;
+    text-align: center;
+color: blue;    
+}

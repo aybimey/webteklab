@@ -1,0 +1,149 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using MySql.Data.MySqlClient;
+using System.Data;
+
+using System.ComponentModel;
+using System.Drawing;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+public partial class UsersAd : System.Web.UI.Page
+{
+    MySqlConnection conn = new MySqlConnection(@"Data Source=localhost;port=3306;Initial Catalog=rental;User Id=root;password=''");
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+    }
+
+
+
+    /*private DataTable getsortedtable(DataTable dt)
+	{
+		DataView dvName = new DataView(dtName.Tables[2], "NameId=" + strArryPredict[1], "order by user_id desc", DataViewRowState.CurrentRows);
+        DataTable dtNew= dvName.ToTable();
+	}*/
+
+
+    protected void Accept_Click(object sender, EventArgs e)
+    {
+        conn.Open();
+        MySqlCommand cmd = conn.CreateCommand();
+        cmd.CommandType = CommandType.Text;
+        //       cmd.CommandText = "update clientaccepted set status = 'activated' where user_id='" + TextBoxStatus.Text + "'";
+        cmd.CommandText = "update clientaccepted set status= 'activated' where user_id = '" + TextBoxStatus.Text + "'";
+        //"update client set status='" + TextBoxStatus1.Text + "' where user_id = '" + TextBoxStatus.Text + "'";
+        cmd.ExecuteNonQuery();
+
+        conn.Close();
+    }
+
+    protected void Deny_Click(object sender, EventArgs e)
+    {
+        conn.Open();
+        MySqlCommand cmd = conn.CreateCommand();
+        cmd.CommandType = CommandType.Text;
+        cmd.CommandText = "update clientaccepted set status= 'deactivated' where user_id = '" + TextBoxStatus.Text + "'";
+        cmd.ExecuteNonQuery();
+
+        conn.Close();
+    }
+
+
+
+
+
+    protected void sortASC_Click(object sender, EventArgs e)
+    {
+        conn.Open();
+        MySqlCommand cmd = conn.CreateCommand();
+        cmd.CommandType = CommandType.Text;
+        cmd.CommandText = "Select user_id,first_name,last_name,username, gender, age, email from client where gender='male'";
+        cmd.ExecuteNonQuery();
+        DataTable dtt = new DataTable();
+        MySqlDataAdapter daa = new MySqlDataAdapter(cmd);
+        daa.Fill(dtt);
+        GridViewCli.DataSource = dtt;
+        GridViewCli.DataBind();
+
+        conn.Close();
+    }
+    protected void sortDSC_Click(object sender, EventArgs e)
+    {
+        conn.Open();
+        MySqlCommand cmd = conn.CreateCommand();
+        cmd.CommandType = CommandType.Text;
+        cmd.CommandText = "Select user_id,first_name,last_name,username, gender, age, email from client where gender='female'";
+        cmd.ExecuteNonQuery();
+        DataTable dtt = new DataTable();
+        MySqlDataAdapter daa = new MySqlDataAdapter(cmd);
+        daa.Fill(dtt);
+        GridViewCli.DataSource = dtt;
+        GridViewCli.DataBind();
+
+        conn.Close();
+    }
+
+    protected void ButtonCli_Click(object sender, EventArgs e)
+    {
+        conn.Open();
+        MySqlCommand cmd = conn.CreateCommand();
+        cmd.CommandType = CommandType.Text;
+        cmd.CommandText = "select user_id, first_name, last_name, city, province, gender, age, status from clientaccepted";
+        cmd.ExecuteNonQuery();
+        DataTable dtt = new DataTable();
+        MySqlDataAdapter daa = new MySqlDataAdapter(cmd);
+        daa.Fill(dtt);
+        GridViewCli.DataSource = dtt;
+        GridViewCli.DataBind();
+
+        conn.Close();
+    }
+    //eto yung edit buttton slash deactivate chuchu
+
+
+
+    protected void ButtonUpCli_Click(object sender, EventArgs e)
+    {
+        conn.Open();
+        MySqlCommand cmd = conn.CreateCommand();
+        cmd.CommandType = CommandType.Text;
+        cmd.ExecuteNonQuery();
+
+        conn.Close();
+    }
+
+    protected void ButtonUpsp_Click(object sender, EventArgs e)
+    {
+        conn.Open();
+        MySqlCommand cmd = conn.CreateCommand();
+        cmd.CommandType = CommandType.Text;
+        cmd.ExecuteNonQuery();
+
+        conn.Close();
+    }
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        conn.Open();
+        MySqlCommand cmd = conn.CreateCommand();
+        cmd.CommandType = CommandType.Text;
+        cmd.CommandText = "select * from serviceprovider";
+        cmd.ExecuteNonQuery();
+        DataTable dtt = new DataTable();
+        MySqlDataAdapter daa = new MySqlDataAdapter(cmd);
+        daa.Fill(dtt);
+        GridViews.DataSource = dtt;
+        GridViews.DataBind();
+
+        conn.Close();
+    }
+
+
+}

@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.6.4
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Generation Time: May 15, 2018 at 07:50 AM
--- Server version: 5.7.19
--- PHP Version: 5.6.31
+-- Host: 127.0.0.1
+-- Generation Time: Jun 02, 2018 at 07:38 AM
+-- Server version: 5.7.14
+-- PHP Version: 5.6.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -28,14 +26,31 @@ SET time_zone = "+00:00";
 -- Table structure for table `accepted_reservation`
 --
 
-DROP TABLE IF EXISTS `accepted_reservation`;
-CREATE TABLE IF NOT EXISTS `accepted_reservation` (
-  `reservation_id` int(50) NOT NULL AUTO_INCREMENT,
-  `reservation_quantity` int(50) NOT NULL,
-  `reservation_date` date NOT NULL,
-  `reservation_duedate` date NOT NULL,
-  PRIMARY KEY (`reservation_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+CREATE TABLE `accepted_reservation` (
+  `reservation_id` int(50) NOT NULL,
+  `reservation_firstname` varchar(50) NOT NULL,
+  `reservation_lastname` varchar(50) NOT NULL,
+  `reservation_contact` varchar(255) NOT NULL,
+  `reservation_collectionname` varchar(255) NOT NULL,
+  `reservation_quantity` int(11) NOT NULL,
+  `reservation_datereserved` varchar(255) NOT NULL,
+  `reservation_datereturned` varchar(255) NOT NULL,
+  `shop_name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `accepted_reservation`
+--
+
+INSERT INTO `accepted_reservation` (`reservation_id`, `reservation_firstname`, `reservation_lastname`, `reservation_contact`, `reservation_collectionname`, `reservation_quantity`, `reservation_datereserved`, `reservation_datereturned`, `shop_name`) VALUES
+(13, 'heart', 'heart', 'heart@gmail.com', 'wedding gown02', 2, '2018-05-24', 'null', 'jelee couture'),
+(14, 'John', 'Snow', 'snow@gmail.com', 'anlee01', 4, '2018-05-24', 'null', 'jelee couture'),
+(20, 'wilma', 'grab', 'wilmagrab@gmail.com', 'anlg02', 2, '2018-06-22', 'null', 'jelee couture'),
+(21, 'wilma', 'grab', 'wilmagrab@gmail.com', 'anglws01', 1, '2018-06-20', 'null', 'jelee couture'),
+(22, 'wilma', 'grab', 'wilmagrab@gmail.com', 'anlg02', 3, '2018-06-29', 'null', 'jelee couture'),
+(23, 'wilma', 'grab', 'wilmagrab@gmail.com', 'anlg03', 5, '2018-06-18', 'null', 'jelee couture'),
+(24, 'wilma', 'grab', 'wilmagrab@gmail.com', 'anglws02', 5, '2018-06-28', 'null', 'jelee couture'),
+(25, 'wilma', 'grab', 'wilmagrab@gmail.com', 'aqawdaw', 8, '2018-06-02', 'null', 'jelee couture');
 
 -- --------------------------------------------------------
 
@@ -43,13 +58,85 @@ CREATE TABLE IF NOT EXISTS `accepted_reservation` (
 -- Table structure for table `admin`
 --
 
-DROP TABLE IF EXISTS `admin`;
-CREATE TABLE IF NOT EXISTS `admin` (
-  `admin_id` int(100) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `admin` (
+  `admin_id` int(100) NOT NULL,
   `username` text NOT NULL,
   `pass` text NOT NULL,
-  PRIMARY KEY (`admin_id`)
+  `firstname` varchar(100) NOT NULL,
+  `lastname` varchar(100) NOT NULL,
+  `address` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `contactnum` int(100) NOT NULL,
+  `addrole` varchar(100) NOT NULL,
+  `status` varchar(100) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`admin_id`, `username`, `pass`, `firstname`, `lastname`, `address`, `email`, `contactnum`, `addrole`, `status`) VALUES
+(1, 'gren', '1234', 'gren', 'grenaaaaaa', 'baguio', 'gen@yahoo.com', 927900215, 'SuperAdmin', 'approved'),
+(2, 'gabu', '1111', 'iela', 'uy', 'naiwan', 'gg@yy.com', 987654321, 'Admin', 'approved'),
+(3, 'iela', '1111', 'gabugab', 'uyyyy', 'qwertyuiop', 'gfgfgf@y.com', 909112233, 'Admin', 'approved'),
+(4, 'kihyunie', '0000', 'kihyun', 'yoo', 'saan ba', 'ky@y.com', 192837456, 'Admin', 'approved'),
+(5, 'baekhyunie', '0000', 'baek', 'qqqqq', 'saan ba', 'ky@y.com', 192887456, 'Admin', 'approved'),
+(6, 'galing', '0000', 'baek', 'nbgdfbgjdsg', 'saan ba', 'ky@y.com', 192887456, 'Admin', 'approved'),
+(7, 'barryallen', 'password', 'first', 'last', 'address 101', 'email@email.com', 123456778, 'Admin', 'approved');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `adminregistration`
+--
+
+CREATE TABLE `adminregistration` (
+  `id` int(100) NOT NULL,
+  `username` varchar(100) NOT NULL,
+  `pass` varchar(100) NOT NULL,
+  `firstname` varchar(100) NOT NULL,
+  `lastname` varchar(100) NOT NULL,
+  `address` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `contactnum` varchar(100) NOT NULL,
+  `addrole` varchar(100) NOT NULL,
+  `status` varchar(100) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `adminregistration`
+--
+
+INSERT INTO `adminregistration` (`id`, `username`, `pass`, `firstname`, `lastname`, `address`, `email`, `contactnum`, `addrole`, `status`) VALUES
+(0, 'iela', '1111', 'gabugab', 'uyyyy', 'qwertyuiop', 'gfgfgf@y.com', '0909112233', 'Admin', 'pending'),
+(0, 'jisoo', '010101', 'joshua', 'hong', 'puso ni gren', 'j@h.com', '12345678901', 'Admin', 'pending'),
+(0, 'lay', '101010', 'yixing', 'zhang', 'puso ni gren ulit', 'landipamore@h.com', '4434567844', 'Admin', 'pending'),
+(0, 'taetae', '101010', 'taeyong', 'lim', 'puso ni gren ulit putiiik', 'landipamore1@h.com', '2345678901', 'Admin', 'pending'),
+(0, 'hobi', '010101', 'hoseok', 'jung', 'puso ni gren ulit putiiik landi talaaga', 'landipamore12@h.com', '09876543216', 'Admin', 'pending'),
+(0, 'jisoo', 'qqqq', 'yixing', 'zhang', 'djgdsjjdkh', 'hehre@ya.com', '9210837465', 'Admin', 'pending');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `category`
+--
+
+CREATE TABLE `category` (
+  `category_id` int(11) NOT NULL,
+  `category_name` varchar(50) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `category`
+--
+
+INSERT INTO `category` (`category_id`, `category_name`) VALUES
+(1, 'Wedding gown'),
+(2, 'Wedding suit'),
+(3, 'Gown'),
+(4, 'Suit'),
+(5, 'Kids gown'),
+(6, 'Kids suit');
 
 -- --------------------------------------------------------
 
@@ -57,30 +144,64 @@ CREATE TABLE IF NOT EXISTS `admin` (
 -- Table structure for table `client`
 --
 
-DROP TABLE IF EXISTS `client`;
-CREATE TABLE IF NOT EXISTS `client` (
-  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `client` (
+  `user_id` int(11) NOT NULL,
   `first_name` varchar(256) NOT NULL,
   `last_name` varchar(256) NOT NULL,
   `username` varchar(256) NOT NULL,
+  `city` varchar(256) NOT NULL,
+  `province` varchar(256) NOT NULL,
   `gender` varchar(100) NOT NULL,
   `age` int(11) NOT NULL,
+  `contactNumber` int(20) NOT NULL,
   `email` varchar(256) NOT NULL,
   `password` varchar(256) NOT NULL,
-  PRIMARY KEY (`user_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+  `status` varchar(20) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `client`
 --
 
-INSERT INTO `client` (`user_id`, `first_name`, `last_name`, `username`, `gender`, `age`, `email`, `password`) VALUES
-(1, 'Venessa', 'Antonio', 'Antonio', 'Female', 20, 'jelly@gmail.com', '$2y$10$U5Y1PAgZEasMUMzC3.oJI.ZeUhOeDPfHycwQVZ4NxwKcWvPKH6K1y'),
-(2, 'Jelly', 'Grabanzor', 'Grabanzor', 'Female', 20, 'grab@gmail.com', '$2y$10$CCsyShRLHjqmtgQNNDNaP./isKfz1SHbJK1k8Oyfd53Sas7fzpc1C'),
-(6, 'John', 'Snow', 'Snow', 'Male', 27, 'snow@gmail.com', '$2y$10$hRDKezYlTtMEmxhJKL5/sutbq.rMIq4iIbQV8lV.4PZx8SQrb8HiO'),
-(7, 'Dora', 'explorer', 'explorer', 'Female', 35, 'dora@gmail.com', '$2y$10$HYkNKDwmgElP1YjuonEAv.ioMPywihQBtNYEUWMtAm3M5GFQPgylS'),
-(8, 'Archie', 'Andrews', 'Andrews', 'Male', 25, 'archie@yahoo.com', '$2y$10$a4f5U66yb9KDfy7ly.YDMu6rW1Bs3Mar3whXN7q//0tOVnjSIryuy'),
-(9, 'Bruno', 'Pluto', 'Pluto', 'Male', 18, 'pluto@yahoo.com', '$2y$10$dxACukhEbsnKwtp.CA8J6uQnBtdrXAbsfh3gwFGLrZsJlZz2oHiLa');
+INSERT INTO `client` (`user_id`, `first_name`, `last_name`, `username`, `city`, `province`, `gender`, `age`, `contactNumber`, `email`, `password`, `status`) VALUES
+(20, 'Jelly', 'Grabanzor', 'jelly', 'Candon', 'Seoul', 'Female', 20, 956874267, 'jelly@gmail.com', '$2y$10$W4wAvZnr10z5A9JfmcZoZOLsE0/CtoNyRhz9QuBsG6GwpdMJkRm26', ''),
+(19, 'john', 'snow', 'johnsnow', 'Winter', 'Fell', 'Male', 32, 977198079, 'johnsnow@gmail.com', '$2y$10$oa.OT/QMuO1KbgW/CLPcdO1k.SO98hzucPEaNGG2esCrjQSPSyXaG', ''),
+(18, 'Venessa', 'Antonio', 'venessantonio', 'Baguio', 'Benguet', 'Female', 20, 956066902, 'venessantonio@gmail.com', '$2y$10$Pg53AutXHUnfz0LzKFo7nuN8Wyajt.fyVzrmDgLJFqVPVAL0fpMui', ''),
+(17, 'gren', 'soriano', 'gren', 'tarlac', 'capas', 'Female', 20, 4449678, 'gren@gmail.com', '$2y$10$82pk/YPXkIh2/RBLmIFapu.xXNqF92wG/4r54xxbcV//JKiOggxCO', ''),
+(24, 'Cynthia', 'Arceo', 'cyn', 'Baguio', 'Paris', 'Female', 63, 954856278, 'cyn@gmail.com', '$2y$10$Aqcm9HxFABVLbim876IIduvWx13YRBhXZj7zjGyM1/p8xkBj9jN4W', ''),
+(25, 'Jug', 'Jones', 'jug', 'riverdale', 'makati', 'Male', 25, 58495348, 'jugheadjones12@gmail.com', '$2y$10$FKFjNgCddvtc53Q0m8SCfuZgFCPfsnTiiTa8ww/yNqz9mY/DmjQQi', ''),
+(26, 'christie', 'anne', 'christieanne', 'olongapo', 'zambales', 'Female', 21, 917584, 'sam@gmail.com', '$2y$10$V1Otwnz7DQFqK4variewsObmZfqG9aYW0Gx/865fFvPHaoqUDp2mq', 'activated');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `clientaccepted`
+--
+
+CREATE TABLE `clientaccepted` (
+  `user_id` int(11) NOT NULL,
+  `first_name` varchar(256) NOT NULL,
+  `last_name` varchar(256) NOT NULL,
+  `username` varchar(256) NOT NULL,
+  `city` varchar(256) NOT NULL,
+  `province` varchar(256) NOT NULL,
+  `gender` varchar(100) NOT NULL,
+  `age` int(11) NOT NULL,
+  `contactNumber` int(20) NOT NULL,
+  `email` varchar(256) NOT NULL,
+  `password` varchar(256) NOT NULL,
+  `status` varchar(100) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `clientaccepted`
+--
+
+INSERT INTO `clientaccepted` (`user_id`, `first_name`, `last_name`, `username`, `city`, `province`, `gender`, `age`, `contactNumber`, `email`, `password`, `status`) VALUES
+(1, 'wilma', 'grab', 'wilma', 'candon', 'ilocos sur', 'female', 38, 9177755, 'wilmagrab@gmail.com', 'wilma', 'activated'),
+(21, 'sam', 'dacanay', 'sam', 'dinalupihan', 'bataan', 'Female', 20, 958742361, 'sam@gmail.com', '$2y$10$f9Tosvb8Q459PG3.DAs07.xnftohSqIvIJfFs.hO4TSuRZTCOTAdW', ''),
+(22, 'sam', 'dacanay', 'sam', 'dinalupihan', 'bataan', 'Female', 20, 965874256, 'sam@gmail.com', '$2y$10$4XOOcl7tmsmh8RcB/PGjV./ZdTTO1VvY20i2xMGeR6zZ8dmdVceXS', ''),
+(23, 'Matt', 'Arceo', 'matt', 'New York', 'Pampanga', 'Male', 20, 948562784, 'matt@gmail.com', '$2y$10$st8ZxJmEwrTv2xJNSS.01eIhThsPp6YbFtKKo0pU0EBo/qj460/ay', 'activated');
 
 -- --------------------------------------------------------
 
@@ -88,16 +209,71 @@ INSERT INTO `client` (`user_id`, `first_name`, `last_name`, `username`, `gender`
 -- Table structure for table `collection`
 --
 
-DROP TABLE IF EXISTS `collection`;
-CREATE TABLE IF NOT EXISTS `collection` (
-  `collection_id` int(11) NOT NULL AUTO_INCREMENT,
-  `category_name` varchar(100) NOT NULL,
+CREATE TABLE `collection` (
+  `collection_id` int(11) NOT NULL,
+  `category_name` varchar(100) DEFAULT NULL,
   `collection_name` varchar(100) NOT NULL,
   `collection_price` varchar(100) NOT NULL,
-  `shop_id` int(11) NOT NULL,
-  `collection_image` int(100) NOT NULL,
-  PRIMARY KEY (`collection_id`)
+  `collection_info` varchar(250) NOT NULL,
+  `collection_quantity` varchar(11) NOT NULL,
+  `shop_name` varchar(200) NOT NULL,
+  `filename` varchar(250) NOT NULL,
+  `path` varchar(250) NOT NULL,
+  `category_id` int(11) NOT NULL,
+  `size` varchar(10) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `collection`
+--
+
+INSERT INTO `collection` (`collection_id`, `category_name`, `collection_name`, `collection_price`, `collection_info`, `collection_quantity`, `shop_name`, `filename`, `path`, `category_id`, `size`) VALUES
+(26, 'Select Category', 'anlg02', '3500.00', 'TRANSLUCENT pink that will surely turn heads', '5', 'jelee couture', 'c3dd4f63108bc74347e76f44d97c3be4.jpg', 'C:\\Users\\Angelica\\Documents\\NetBeansProjects\\ServiceProvider\\web\\images\\c3dd4f63108bc74347e76f44d97c3be4.jpg', 0, ''),
+(27, ' Gown ', 'anlg03', '3200.00', 'pale pink gown that will make you like a princess', '10', 'jelee couture', 'a643d6c01899282e577b294b60096344.jpg', 'C:\\Users\\Angelica\\Documents\\NetBeansProjects\\ServiceProvider\\web\\images\\a643d6c01899282e577b294b60096344.jpg', 3, ''),
+(24, ' Gown ', 'anlee01', '2890.00', 'perfect for ladies who wants to stand out', '5', 'jelee couture', 'a2fb6558e6e42ff2434e0b225bc44b46.jpg', 'C:\\Users\\Angelica\\Documents\\NetBeansProjects\\ServiceProvider\\web\\images\\a2fb6558e6e42ff2434e0b225bc44b46.jpg', 3, ''),
+(33, ' Gown ', 'blkg01', '2800.00', 'Mysterious black', '3', 'Blanc & Eclare', 'cbc0bf006fd3c58f64af784cc38146ed.jpg', 'C:\\Users\\Angelica\\Documents\\NetBeansProjects\\ServiceProvider\\web\\images\\cbc0bf006fd3c58f64af784cc38146ed.jpg', 3, ''),
+(34, ' Gown ', 'blkg02', '3500.00', 'This elegant and classy gown will definitely make you look like a part of the royal family', '1', 'Blanc & Eclare', 'edae79cb746acfb4b2a552416ec2e889.jpg', 'C:\\Users\\Angelica\\Documents\\NetBeansProjects\\ServiceProvider\\web\\images\\edae79cb746acfb4b2a552416ec2e889.jpg', 3, ''),
+(30, ' Wedding suit ', 'anglws01', '3300.00', 'Your soon to be bride will realize how lucky she is', '4', 'jelee couture', 'suit6.JPG', 'C:\\Users\\Angelica\\Documents\\NetBeansProjects\\ServiceProvider\\web\\images\\suit6.JPG', 2, ''),
+(31, ' Wedding suit ', 'anglws02', '3,800.00', 'You will definitely feel like a man', '8', 'jelee couture', 'suit5.JPG', 'C:\\Users\\Angelica\\Documents\\NetBeansProjects\\ServiceProvider\\web\\images\\suit5.JPG', 2, ''),
+(35, ' Gown ', 'blkg03', '3200.00', 'Black will definitely make you sexy', '3', 'Blanc & Eclare', '302e63e8c3731aee2e419b3edb71a033.jpg', 'C:\\Users\\Angelica\\Documents\\NetBeansProjects\\ServiceProvider\\web\\images\\302e63e8c3731aee2e419b3edb71a033.jpg', 3, ''),
+(36, ' Kids gown ', 'blkk01', '3,200.00', 'Little gown for a little princess', '5', 'Blanc & Eclare', 'kid3.JPG', 'C:\\Users\\Angelica\\Documents\\NetBeansProjects\\ServiceProvider\\web\\images\\kid3.JPG', 5, ''),
+(37, ' Kids gown ', 'blkk02', '2,800.00', 'Royal Princess', '10', 'Blanc & Eclare', 'kid5.JPG', 'C:\\Users\\Angelica\\Documents\\NetBeansProjects\\ServiceProvider\\web\\images\\kid5.JPG', 5, ''),
+(38, ' Kids gown ', 'blkk03', '3,250.00', 'Little lace princess gown', '10', 'Blanc & Eclare', 'kid7.JPG', 'C:\\Users\\Angelica\\Documents\\NetBeansProjects\\ServiceProvider\\web\\images\\kid7.JPG', 5, ''),
+(42, NULL, 'sameple', '100', 'awdawdawd', '10', 'jelee couture', '1.jpg', 'D:\\ServiceProvider\\web\\images\\1.jpg', 6, NULL),
+(43, NULL, 'Jane doe', '1000', 'White gown', '10', 'jelee couture', '31f413e4f39d943e897f4b343cc9914e.jpg', 'D:\\ServiceProvider\\web\\images\\31f413e4f39d943e897f4b343cc9914e.jpg', 1, NULL),
+(44, NULL, 'wed679', '1000', 'wedding', '100', 'jelee couture', 'edae79cb746acfb4b2a552416ec2e889.jpg', 'D:\\ServiceProvider\\web\\images\\edae79cb746acfb4b2a552416ec2e889.jpg', 1, NULL),
+(45, NULL, 'Sample 2', '1000', 'adwawdawd', '10', 'jelee couture', '2.jpg', 'D:\\ServiceProvider\\web\\images\\2.jpg', 6, NULL),
+(46, NULL, 'wer45', '4398', 'elegant', '2', 'jelee couture', 'weddingY.JPG', 'D:\\ServiceProvider\\web\\images\\weddingY.JPG', 1, NULL),
+(47, NULL, 'Blue suit', '5000', 'its elegant and free', '10', 'jelee couture', 'suit4.JPG', 'D:\\ServiceProvider\\web\\images\\suit4.JPG', 4, NULL),
+(48, NULL, 'Blue like the sky', '1,200', 'your wife will love you more', '4', 'jelee couture', 'suit3.JPG', 'D:\\ServiceProvider\\web\\images\\suit3.JPG', 4, NULL),
+(49, NULL, 'cream line', '5,000', 'shine bright on your wedding day', '10', 'jelee couture', 'suit2.JPG', 'D:\\ServiceProvider\\web\\images\\suit2.JPG', 2, NULL),
+(52, NULL, 'red sparrow', '2,000', 'very good red', '6', 'jelee couture', '12.jpg', 'D:\\ServiceProvider\\web\\images\\12.jpg', 6, NULL),
+(53, NULL, 'aqawdaw', '1000', 'asdawdawd', '10', 'jelee couture', '12.jpg', 'D:\\ServiceProvider\\web\\images\\12.jpg', 6, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `rejected`
+--
+
+CREATE TABLE `rejected` (
+  `rejected_id` int(100) NOT NULL,
+  `reservation_collectionname` varchar(100) DEFAULT NULL,
+  `reservation_quantity` int(100) DEFAULT NULL,
+  `req_price` varchar(100) DEFAULT NULL,
+  `shop_name` varchar(100) DEFAULT NULL,
+  `req_datereserved` date DEFAULT NULL,
+  `first_name` text
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `rejected`
+--
+
+INSERT INTO `rejected` (`rejected_id`, `reservation_collectionname`, `reservation_quantity`, `req_price`, `shop_name`, `req_datereserved`, `first_name`) VALUES
+(7, 'cream line', 5, NULL, 'jelee couture', '2018-06-02', 'wilma'),
+(8, 'cream line', 1, '5,000', 'jelee couture', '2018-06-13', 'wilma'),
+(9, 'Blue suit', 10, '5000', 'jelee couture', '2018-06-02', 'wilma');
 
 -- --------------------------------------------------------
 
@@ -105,13 +281,37 @@ CREATE TABLE IF NOT EXISTS `collection` (
 -- Table structure for table `request_reservation`
 --
 
-DROP TABLE IF EXISTS `request_reservation`;
-CREATE TABLE IF NOT EXISTS `request_reservation` (
-  `req_id` int(11) NOT NULL AUTO_INCREMENT,
-  `reservation_quantity` int(3) NOT NULL,
-  `reservation_date` date NOT NULL,
-  PRIMARY KEY (`req_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+CREATE TABLE `request_reservation` (
+  `req_id` int(11) NOT NULL,
+  `req_lastname` varchar(20) NOT NULL,
+  `req_firstname` varchar(20) DEFAULT NULL,
+  `req_contactnumber` varchar(20) DEFAULT NULL,
+  `req_collectionname` varchar(255) DEFAULT NULL,
+  `req_categoryname` varchar(255) DEFAULT NULL,
+  `req_quantity` varchar(255) DEFAULT NULL,
+  `req_price` varchar(255) DEFAULT NULL,
+  `req_datereserved` date DEFAULT NULL,
+  `req_datereturned` date DEFAULT NULL,
+  `shop_name` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `request_reservation`
+--
+
+INSERT INTO `request_reservation` (`req_id`, `req_lastname`, `req_firstname`, `req_contactnumber`, `req_collectionname`, `req_categoryname`, `req_quantity`, `req_price`, `req_datereserved`, `req_datereturned`, `shop_name`) VALUES
+(1, 'heart', 'heart', 'heart@gmail.com', '', '', '3', '', '2018-05-14', NULL, ''),
+(2, 'heart', 'heart', 'heart@gmail.com', '', '', '5', '', '2018-05-22', NULL, ''),
+(3, 'heart', 'heart', 'heart@gmail.com', '', '', '2', '', '2018-05-24', NULL, ''),
+(4, 'heart', 'heart', 'heart@gmail.com', 'anglws02;', '', '4', '', '2018-05-23', NULL, ''),
+(5, 'heart', 'heart', 'heart@gmail.com', 'anlg03', ' Gown ;', '4', '', '2018-05-25', NULL, ''),
+(6, 'heart', 'heart', 'heart@gmail.com', 'anglws01', ' Wedding suit ', '3', '3300.00', '2018-05-29', NULL, ''),
+(7, 'heart', 'heart', 'heart@gmail.com', 'blkg03', ' Gown ', '2', '3200.00', '2018-05-24', NULL, 'Blanc '),
+(8, 'Arceo', 'Matt', '', 'blkg03', ' Gown ', '2', '3200.00', '2018-06-03', NULL, 'Blanc '),
+(37, 'grab', 'wilma', 'wilmagrab@gmail.com', 'anglws02', ' Wedding suit ', '2', '3,800.00', '2018-06-28', NULL, 'jelee couture'),
+(38, 'grab', 'wilma', 'wilmagrab@gmail.com', 'sameple', '', '5', '100', '2018-06-19', NULL, 'jelee couture'),
+(39, 'grab', 'wilma', 'wilmagrab@gmail.com', 'Blue suit', '', '5', '5000', '2018-06-27', NULL, 'jelee couture'),
+(43, 'grab', 'wilma', 'wilmagrab@gmail.com', 'blkg01', ' Gown ', '2', '2800.00', '2018-06-02', NULL, 'Blanc ');
 
 -- --------------------------------------------------------
 
@@ -119,23 +319,49 @@ CREATE TABLE IF NOT EXISTS `request_reservation` (
 -- Table structure for table `serviceprovider`
 --
 
-DROP TABLE IF EXISTS `serviceprovider`;
-CREATE TABLE IF NOT EXISTS `serviceprovider` (
-  `shop_id` int(100) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `serviceprovider` (
+  `shop_id` int(100) NOT NULL,
   `shop_name` varchar(20) NOT NULL,
   `password` varchar(20) NOT NULL,
   `address` varchar(200) NOT NULL,
   `shop_info` varchar(255) NOT NULL,
   `shop_contact` varchar(50) NOT NULL,
-  PRIMARY KEY (`shop_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+  `shop_owner` text NOT NULL,
+  `status` varchar(20) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `serviceprovider`
 --
 
-INSERT INTO `serviceprovider` (`shop_id`, `shop_name`, `password`, `address`, `shop_info`, `shop_contact`) VALUES
-(1, 'fabshopyyyy', 'fabshop', '#47 gibraltar Road Near Hotel Elizabeth Baguio City', 'We sell your products all like gowns and mens apparel.', 'Call or Text Sherryl ann at 09812344123');
+INSERT INTO `serviceprovider` (`shop_id`, `shop_name`, `password`, `address`, `shop_info`, `shop_contact`, `shop_owner`, `status`) VALUES
+(3, 'jelee couture', 'jelee', 'Seoul, Ilocos sur', 'Having spent much of her adulthood in the spotlight surrounded by renowned designers and brands, Angelica decided to join the fashion conversation with her own collections that reflect her love of the modern classic.', '09151591096/ alee@gmail.com', 'angelica lee', 'activated'),
+(6, 'Blanc & Eclare', 'jessica', 'Manila, California', 'Jessica Jung brings her flair for design and love of the classic aesthetic to her fashion line, BLANC & ECLARE. BLANC & ECLARE?s unique point of view is best described as the modern classic.', 'blanc&eclare@gmail.com', 'Jessica Jung', 'activated'),
+(7, 'convergys', 'johnny', 'gibraltar road new york subic', 'the best shop in town', '090123123', 'johnny', 'pending');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `size`
+--
+
+CREATE TABLE `size` (
+  `size_id` int(10) NOT NULL,
+  `size` varchar(20) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `size`
+--
+
+INSERT INTO `size` (`size_id`, `size`) VALUES
+(1, 'XS'),
+(2, 'S'),
+(3, 'M'),
+(4, 'ML'),
+(5, 'L'),
+(6, 'XL'),
+(7, 'XXL');
 
 -- --------------------------------------------------------
 
@@ -143,13 +369,139 @@ INSERT INTO `serviceprovider` (`shop_id`, `shop_name`, `password`, `address`, `s
 -- Table structure for table `transaction`
 --
 
-DROP TABLE IF EXISTS `transaction`;
-CREATE TABLE IF NOT EXISTS `transaction` (
-  `transaction_id` int(11) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`transaction_id`)
+CREATE TABLE `transaction` (
+  `transaction_id` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-COMMIT;
 
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `accepted_reservation`
+--
+ALTER TABLE `accepted_reservation`
+  ADD PRIMARY KEY (`reservation_id`);
+
+--
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`admin_id`);
+
+--
+-- Indexes for table `category`
+--
+ALTER TABLE `category`
+  ADD PRIMARY KEY (`category_id`);
+
+--
+-- Indexes for table `client`
+--
+ALTER TABLE `client`
+  ADD PRIMARY KEY (`user_id`);
+
+--
+-- Indexes for table `clientaccepted`
+--
+ALTER TABLE `clientaccepted`
+  ADD PRIMARY KEY (`user_id`);
+
+--
+-- Indexes for table `collection`
+--
+ALTER TABLE `collection`
+  ADD PRIMARY KEY (`collection_id`);
+
+--
+-- Indexes for table `rejected`
+--
+ALTER TABLE `rejected`
+  ADD PRIMARY KEY (`rejected_id`);
+
+--
+-- Indexes for table `request_reservation`
+--
+ALTER TABLE `request_reservation`
+  ADD PRIMARY KEY (`req_id`);
+
+--
+-- Indexes for table `serviceprovider`
+--
+ALTER TABLE `serviceprovider`
+  ADD PRIMARY KEY (`shop_id`);
+
+--
+-- Indexes for table `size`
+--
+ALTER TABLE `size`
+  ADD PRIMARY KEY (`size_id`);
+
+--
+-- Indexes for table `transaction`
+--
+ALTER TABLE `transaction`
+  ADD PRIMARY KEY (`transaction_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `accepted_reservation`
+--
+ALTER TABLE `accepted_reservation`
+  MODIFY `reservation_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+--
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `admin_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT for table `category`
+--
+ALTER TABLE `category`
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+--
+-- AUTO_INCREMENT for table `client`
+--
+ALTER TABLE `client`
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+--
+-- AUTO_INCREMENT for table `clientaccepted`
+--
+ALTER TABLE `clientaccepted`
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+--
+-- AUTO_INCREMENT for table `collection`
+--
+ALTER TABLE `collection`
+  MODIFY `collection_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+--
+-- AUTO_INCREMENT for table `rejected`
+--
+ALTER TABLE `rejected`
+  MODIFY `rejected_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+--
+-- AUTO_INCREMENT for table `request_reservation`
+--
+ALTER TABLE `request_reservation`
+  MODIFY `req_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+--
+-- AUTO_INCREMENT for table `serviceprovider`
+--
+ALTER TABLE `serviceprovider`
+  MODIFY `shop_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT for table `size`
+--
+ALTER TABLE `size`
+  MODIFY `size_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT for table `transaction`
+--
+ALTER TABLE `transaction`
+  MODIFY `transaction_id` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
